@@ -63,17 +63,25 @@ border-color: var(--color-border-accent);
 }
 
 /* =========================================
-XERA — SIGNATURE FUTURISTIC X
-Compact Modified X Loading System
+XERA — SIGNATURE X LOADER
+
+ONE X ONLY
+Dark White / Silver Core
+Controlled Cyan + Violet Glitch
+No Circle
+No Orbit
+No Extra Logo
 ========================================= */
 
 .xera-loader {
+
 position: relative;
 
 width: 64px;
 height: 64px;
 
 display: flex;
+
 align-items: center;
 justify-content: center;
 
@@ -81,316 +89,203 @@ margin: 0 auto 1.5rem;
 
 isolation: isolate;
 
-contain: layout paint;
-
 }
 
 /* =========================================
-X MARK CONTAINER
+X LOADER MARK
 ========================================= */
 
-.x-mark {
+.x-loader-mark {
+
 position: relative;
 
-width: 52px;
-height: 52px;
+width: 50px;
+height: 50px;
 
 display: flex;
+
 align-items: center;
 justify-content: center;
 
 }
 
 /* =========================================
-MAIN X CORE
+SINGLE FUTURISTIC X
 ========================================= */
 
-.x-core {
+.x-shape {
+
 position: absolute;
+
+width: 44px;
+height: 44px;
 
 top: 50%;
 left: 50%;
 
-width: 48px;
-height: 48px;
-
 transform:
 translate(-50%, -50%);
 
-transform-origin: center;
-
 animation:
-x-core-cycle
-3.2s
+
+x-main-cycle
+3.4s
 cubic-bezier(0.65, 0, 0.35, 1)
 infinite;
 
 }
 
 /* =========================================
-X SHARDS
-The X is built from 4 separated pieces
+X STROKES
 ========================================= */
 
-.x-shard {
+.x-stroke {
+
 position: absolute;
 
+top: 50%;
+left: 50%;
+
 width: 5px;
-height: 28px;
 
-top: 10px;
+height: 40px;
 
-border-radius: 2px;
+border-radius: 1px;
+
+/* Dark White / Silver Metal */
 
 background:
+
 linear-gradient(
-180deg,
-#FFFFFF 0%,
-#00D9E8 45%,
-#7B3FE4 100%
+    180deg,
+
+    #FFFFFF 0%,
+
+    #D8DCE2 32%,
+
+    #858B94 54%,
+
+    #F4F5F7 74%,
+
+    #9EA4AD 100%
 );
 
+/* Premium Soft Shine */
+
 box-shadow:
-0 0 5px rgba(0, 240, 255, 0.25),
-0 0 12px rgba(123, 63, 228, 0.15);
+
+0 0 2px
+rgba(255,255,255,0.9),
+
+0 0 7px
+rgba(255,255,255,0.25),
+
+0 0 14px
+rgba(150,160,175,0.10);
 
 transform-origin:
+
 center center;
 
 }
 
 /* =========================================
-LEFT UPPER X SHARD
+X LEFT DIAGONAL
 ========================================= */
 
-.shard-1 {
-
-left: 14px;
+.x-stroke-a {
 
 transform:
+
+translate(-50%, -50%)
 rotate(42deg);
 
-animation:
-shard-1-cycle
-3.2s
-infinite;
-
 }
 
 /* =========================================
-RIGHT UPPER X SHARD
+X RIGHT DIAGONAL
 ========================================= */
 
-.shard-2 {
-
-right: 14px;
+.x-stroke-b {
 
 transform:
+
+translate(-50%, -50%)
 rotate(-42deg);
 
-animation:
-shard-2-cycle
-3.2s
-infinite;
-
 }
 
 /* =========================================
-LEFT LOWER X SHARD
+SUBTLE DIGITAL CUTS
+These create the modified X identity
 ========================================= */
 
-.shard-3 {
+.x-stroke::before {
 
-left: 14px;
-
-transform:
-rotate(-42deg);
-
-animation:
-shard-3-cycle
-3.2s
-infinite;
-
-}
-
-/* =========================================
-RIGHT LOWER X SHARD
-========================================= */
-
-.shard-4 {
-
-right: 14px;
-
-transform:
-rotate(42deg);
-
-animation:
-shard-4-cycle
-3.2s
-infinite;
-
-}
-
-/* =========================================
-DIGITAL CUTS
-Creates the modified XERA identity
-========================================= */
-
-.x-cut {
+content: "";
 
 position: absolute;
+
+left: -1px;
+
+top: 11px;
+
+width: 7px;
 
 height: 2px;
 
 background:
-#080A0F;
 
-z-index: 8;
-
-opacity: 0;
-
-}
-
-/* Upper Digital Cut */
-
-.cut-1 {
-
-width: 13px;
-
-top: 18px;
-left: 18px;
-
-transform:
-rotate(-5deg);
-
-animation:
-x-cut-cycle
-3.2s
-infinite;
-
-}
-
-/* Lower Digital Cut */
-
-.cut-2 {
-
-width: 11px;
-
-bottom: 17px;
-right: 17px;
-
-transform:
-rotate(5deg);
-
-animation:
-x-cut-cycle
-3.2s
-0.08s
-infinite;
-
-}
-
-/* =========================================
-CYAN GHOST X
-========================================= */
-
-.x-ghost {
-
-position: absolute;
-
-top: 50%;
-left: 50%;
-
-width: 48px;
-height: 48px;
-
-pointer-events: none;
+#090B10;
 
 opacity: 0;
 
-}
-
-/* Cyan Ghost */
-
-.x-ghost-cyan {
-
-transform:
-translate(-50%, -50%)
-translateX(-3px);
-
 animation:
-cyan-ghost-cycle
-3.2s
+
+x-cut-glitch
+3.4s
 infinite;
 
 }
 
-.x-ghost-cyan span {
+.x-stroke::after {
+
+content: "";
 
 position: absolute;
 
-top: 50%;
-left: 50%;
+left: -1px;
 
-width: 4px;
-height: 29px;
+bottom: 10px;
+
+width: 7px;
+
+height: 2px;
 
 background:
-#00D9E8;
 
-box-shadow:
-0 0 7px rgba(0, 217, 232, 0.45);
+#090B10;
 
-transform:
-translate(-50%, -50%)
-rotate(42deg);
-
-}
-
-/* =========================================
-VIOLET GHOST X
-========================================= */
-
-.x-ghost-violet {
-
-transform:
-translate(-50%, -50%)
-translateX(3px);
+opacity: 0;
 
 animation:
-violet-ghost-cycle
-3.2s
+
+x-cut-glitch
+3.4s
+0.04s
 infinite;
 
 }
 
-.x-ghost-violet span {
-
-position: absolute;
-
-top: 50%;
-left: 50%;
-
-width: 4px;
-height: 29px;
-
-background:
-#7B3FE4;
-
-box-shadow:
-0 0 7px rgba(123, 63, 228, 0.4);
-
-transform:
-translate(-50%, -50%)
-rotate(-42deg);
-
-}
-
 /* =========================================
-GLITCH FRAGMENTS
+GLITCH LAYER
+
+NOT A SECOND X
+
+Only horizontal digital displacement
 ========================================= */
 
-.x-glitch-fragments {
+.x-glitch-layer {
 
 position: absolute;
 
@@ -400,28 +295,181 @@ pointer-events: none;
 
 }
 
-/* Base Fragment */
+/* =========================================
+GLITCH LINES
+========================================= */
 
-.fragment {
+.x-glitch-line {
 
 position: absolute;
 
-display: block;
+height: 2px;
+
+opacity: 0;
+
+border-radius: 1px;
+
+mix-blend-mode:
+
+screen;
+
+}
+
+/* Cyan Digital Slice */
+
+.glitch-1 {
+
+width: 13px;
+
+top: 14px;
+
+left: 4px;
+
+background:
+
+#00DDEB;
+
+box-shadow:
+
+0 0 6px
+rgba(0,221,235,0.65);
+
+animation:
+
+glitch-slice-1
+3.4s
+infinite;
+
+}
+
+/* White Digital Slice */
+
+.glitch-2 {
+
+width: 21px;
+
+top: 21px;
+
+left: 15px;
+
+background:
+
+#FFFFFF;
+
+box-shadow:
+
+0 0 7px
+rgba(255,255,255,0.5);
+
+animation:
+
+glitch-slice-2
+3.4s
+infinite;
+
+}
+
+/* Violet Digital Slice */
+
+.glitch-3 {
+
+width: 12px;
+
+top: 28px;
+
+right: 3px;
+
+background:
+
+#8060E8;
+
+box-shadow:
+
+0 0 6px
+rgba(128,96,232,0.6);
+
+animation:
+
+glitch-slice-3
+3.4s
+infinite;
+
+}
+
+/* Cyan Lower Slice */
+
+.glitch-4 {
+
+width: 17px;
+
+bottom: 14px;
+
+left: 5px;
+
+background:
+
+#00DDEB;
+
+box-shadow:
+
+0 0 6px
+rgba(0,221,235,0.5);
+
+animation:
+
+glitch-slice-4
+3.4s
+infinite;
+
+}
+
+/* White Micro Slice */
+
+.glitch-5 {
+
+width: 9px;
+
+bottom: 9px;
+
+right: 8px;
+
+background:
+
+#DDE1E7;
+
+animation:
+
+glitch-slice-5
+3.4s
+infinite;
+
+}
+
+/* =========================================
+TINY DIGITAL FRAGMENTS
+========================================= */
+
+.x-fragments {
+
+position: absolute;
+
+inset: 0;
+
+pointer-events: none;
+
+}
+
+.x-fragment {
+
+position: absolute;
 
 height: 2px;
 
 opacity: 0;
 
 background:
-linear-gradient(
-90deg,
-#00D9E8,
-#FFFFFF,
-#7B3FE4
-);
 
-box-shadow:
-0 0 5px rgba(0, 217, 232, 0.3);
+#C8CDD5;
 
 }
 
@@ -429,14 +477,16 @@ box-shadow:
 
 .fragment-1 {
 
-width: 10px;
+width: 5px;
 
-top: 15px;
-left: 7px;
+top: 17px;
+
+left: 1px;
 
 animation:
-fragment-cycle-1
-3.2s
+
+fragment-glitch-1
+3.4s
 infinite;
 
 }
@@ -445,14 +495,16 @@ infinite;
 
 .fragment-2 {
 
-width: 8px;
+width: 7px;
 
-top: 21px;
-right: 5px;
+top: 25px;
+
+right: 0;
 
 animation:
-fragment-cycle-2
-3.2s
+
+fragment-glitch-2
+3.4s
 infinite;
 
 }
@@ -461,14 +513,16 @@ infinite;
 
 .fragment-3 {
 
-width: 13px;
+width: 4px;
 
-top: 26px;
-left: 19px;
+bottom: 18px;
+
+left: 4px;
 
 animation:
-fragment-cycle-3
-3.2s
+
+fragment-glitch-3
+3.4s
 infinite;
 
 }
@@ -477,327 +531,95 @@ infinite;
 
 .fragment-4 {
 
-width: 7px;
-
-bottom: 19px;
-left: 6px;
-
-animation:
-fragment-cycle-4
-3.2s
-infinite;
-
-}
-
-/* Fragment 5 */
-
-.fragment-5 {
-
-width: 11px;
-
-bottom: 13px;
-right: 8px;
-
-animation:
-fragment-cycle-5
-3.2s
-infinite;
-
-}
-
-/* Fragment 6 */
-
-.fragment-6 {
-
 width: 6px;
 
-top: 31px;
-right: 2px;
+bottom: 12px;
+
+right: 3px;
 
 animation:
-fragment-cycle-6
-3.2s
+
+fragment-glitch-4
+3.4s
 infinite;
 
 }
 
 /* =========================================
-MAIN X CYCLE
+MAIN X LOADING CYCLE
 
-0–18%   = X disappears
-18–42%  = X glitches / rebuilds
-42–58%  = X fully visible
-58–72%  = reverse glitch
-72–100% = X disappears / next cycle
+0–15%   Hidden
+15–30%  Digital build
+30–45%  X forms
+45–57%  Calm complete X
+57–70%  Glitch
+70–85%  Reverse breakdown
+85–100% Reset
 ========================================= */
 
-@keyframes x-core-cycle {
-
-/* X starts invisible */
+@keyframes x-main-cycle {
 
 0% {
 
 opacity: 0;
 
 filter:
+
 blur(4px);
 
 transform:
+
 translate(-50%, -50%)
-scale(0.7)
+scale(0.72)
 skewX(0deg);
 
 }
 
-/* Digital appearance */
+10% {
 
-12% {
-
-opacity: 0.18;
+opacity: 0.05;
 
 filter:
-blur(2px);
+
+blur(3px);
 
 transform:
+
 translate(-50%, -50%)
-scale(0.78)
+scale(0.76)
 skewX(-5deg);
 
 }
 
-/* X begins forming */
+18% {
 
-24% {
-
-opacity: 0.65;
+opacity: 0.35;
 
 filter:
-blur(0.8px);
 
-transform:
-translate(-50%, -50%)
-scale(0.9)
-skewX(3deg);
-
-}
-
-/* X formed */
-
-38% {
-
-opacity: 1;
-
-filter:
-blur(0);
-
-transform:
-translate(-50%, -50%)
-scale(1)
-skewX(0deg);
-
-}
-
-/* Calm hold */
-
-42%,
-55% {
-
-opacity: 1;
-
-transform:
-translate(-50%, -50%)
-scale(1);
-
-}
-
-/* Reverse glitch begins */
-
-59% {
-
-opacity: 0.85;
-
-transform:
-translate(-50%, -50%)
-translateX(2px)
-scale(1.01)
-skewX(-4deg);
-
-}
-
-/* Reverse displacement */
-
-63% {
-
-opacity: 0.6;
-
-transform:
-translate(-50%, -50%)
-translateX(-3px)
-scale(0.97)
-skewX(5deg);
-
-}
-
-/* X breaking apart */
-
-70% {
-
-opacity: 0.25;
-
-filter:
 blur(1.5px);
 
 transform:
+
 translate(-50%, -50%)
 scale(0.84)
-skewX(-3deg);
+skewX(4deg);
 
 }
 
-/* Almost gone */
-
-84% {
-
-opacity: 0.08;
-
-filter:
-blur(3px);
-
-transform:
-translate(-50%, -50%)
-scale(0.72);
-
-}
-
-/* New cycle */
-
-100% {
-
-opacity: 0;
-
-filter:
-blur(4px);
-
-transform:
-translate(-50%, -50%)
-scale(0.7);
-
-}
-
-}
-
-/* =========================================
-SHARD 1
-========================================= */
-
-@keyframes shard-1-cycle {
-
-0%,
-10% {
-
-opacity: 0;
-
-transform:
-translate(-8px, 6px)
-rotate(34deg)
-scale(0.5);
-
-}
-
-20% {
-
-opacity: 0.7;
-
-transform:
-translate(-3px, 2px)
-rotate(40deg)
-scale(0.8);
-
-}
-
-34% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(42deg)
-scale(1);
-
-}
-
-55% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(42deg)
-scale(1);
-
-}
-
-62% {
+27% {
 
 opacity: 0.75;
 
-transform:
-translate(3px, -2px)
-rotate(45deg)
-scale(0.95);
+filter:
 
-}
-
-70% {
-
-opacity: 0.2;
+blur(0.5px);
 
 transform:
-translate(-5px, 4px)
-rotate(35deg)
-scale(0.7);
 
-}
-
-100% {
-
-opacity: 0;
-
-transform:
-translate(-8px, 6px)
-rotate(34deg)
-scale(0.5);
-
-}
-
-}
-
-/* =========================================
-SHARD 2
-========================================= */
-
-@keyframes shard-2-cycle {
-
-0%,
-12% {
-
-opacity: 0;
-
-transform:
-translate(8px, -5px)
-rotate(-34deg)
-scale(0.5);
-
-}
-
-22% {
-
-opacity: 0.7;
-
-transform:
-translate(3px, -2px)
-rotate(-40deg)
-scale(0.8);
+translate(-50%, -50%)
+scale(0.94)
+skewX(-2deg);
 
 }
 
@@ -805,387 +627,180 @@ scale(0.8);
 
 opacity: 1;
 
+filter:
+
+blur(0);
+
 transform:
-translate(0, 0)
-rotate(-42deg)
-scale(1);
+
+translate(-50%, -50%)
+scale(1)
+skewX(0deg);
 
 }
 
-55% {
+/* Calm premium state */
+
+42%,
+54% {
 
 opacity: 1;
 
 transform:
-translate(0, 0)
-rotate(-42deg)
+
+translate(-50%, -50%)
 scale(1);
 
 }
+
+/* First glitch */
+
+57% {
+
+opacity: 0.9;
+
+transform:
+
+translate(-50%, -50%)
+translateX(-2px)
+scale(1.01)
+skewX(-4deg);
+
+}
+
+/* Digital displacement */
+
+60% {
+
+opacity: 0.7;
+
+transform:
+
+translate(-50%, -50%)
+translateX(3px)
+scale(0.98)
+skewX(5deg);
+
+}
+
+/* Strong glitch */
 
 63% {
 
-opacity: 0.7;
+opacity: 0.45;
 
 transform:
-translate(-3px, 2px)
-rotate(-45deg)
-scale(0.95);
+
+translate(-50%, -50%)
+translateX(-4px)
+scale(0.96)
+skewX(-6deg);
 
 }
 
-72% {
+/* Reverse breakdown */
 
-opacity: 0.2;
+68% {
+
+opacity: 0.25;
+
+filter:
+
+blur(1px);
 
 transform:
-translate(5px, -4px)
-rotate(-35deg)
-scale(0.7);
+
+translate(-50%, -50%)
+translateX(2px)
+scale(0.88)
+skewX(4deg);
 
 }
 
-100% {
-
-opacity: 0;
-
-transform:
-translate(8px, -5px)
-rotate(-34deg)
-scale(0.5);
-
-}
-
-}
-
-/* =========================================
-SHARD 3
-========================================= */
-
-@keyframes shard-3-cycle {
-
-0%,
-14% {
-
-opacity: 0;
-
-transform:
-translate(-7px, -6px)
-rotate(-34deg)
-scale(0.5);
-
-}
-
-24% {
-
-opacity: 0.65;
-
-transform:
-translate(-3px, -2px)
-rotate(-40deg)
-scale(0.8);
-
-}
-
-38% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(-42deg)
-scale(1);
-
-}
-
-56% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(-42deg)
-scale(1);
-
-}
-
-64% {
-
-opacity: 0.7;
-
-transform:
-translate(3px, 2px)
-rotate(-45deg)
-scale(0.94);
-
-}
-
-74% {
-
-opacity: 0.18;
-
-transform:
-translate(-5px, -4px)
-rotate(-35deg)
-scale(0.7);
-
-}
-
-100% {
-
-opacity: 0;
-
-transform:
-translate(-7px, -6px)
-rotate(-34deg)
-scale(0.5);
-
-}
-
-}
-
-/* =========================================
-SHARD 4
-========================================= */
-
-@keyframes shard-4-cycle {
-
-0%,
-16% {
-
-opacity: 0;
-
-transform:
-translate(7px, 6px)
-rotate(34deg)
-scale(0.5);
-
-}
-
-26% {
-
-opacity: 0.65;
-
-transform:
-translate(3px, 2px)
-rotate(40deg)
-scale(0.8);
-
-}
-
-40% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(42deg)
-scale(1);
-
-}
-
-56% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(42deg)
-scale(1);
-
-}
-
-65% {
-
-opacity: 0.7;
-
-transform:
-translate(-3px, -2px)
-rotate(45deg)
-scale(0.94);
-
-}
+/* X disappearing */
 
 76% {
 
-opacity: 0.18;
+opacity: 0.08;
+
+filter:
+
+blur(2.5px);
 
 transform:
-translate(5px, 4px)
-rotate(35deg)
-scale(0.7);
+
+translate(-50%, -50%)
+translateX(-2px)
+scale(0.78)
+skewX(-3deg);
 
 }
 
+/* Reset */
+
+88%,
 100% {
 
 opacity: 0;
 
+filter:
+
+blur(4px);
+
 transform:
-translate(7px, 6px)
-rotate(34deg)
-scale(0.5);
+
+translate(-50%, -50%)
+scale(0.72)
+skewX(0deg);
 
 }
 
 }
 
 /* =========================================
-CYAN GHOST GLITCH
+DIGITAL CUT GLITCH
 ========================================= */
 
-@keyframes cyan-ghost-cycle {
+@keyframes x-cut-glitch {
 
 0%,
-54% {
+52% {
 
 opacity: 0;
 
 transform:
-translate(-50%, -50%)
+
+translateX(0);
+
+}
+
+57% {
+
+opacity: 0.8;
+
+transform:
+
 translateX(-2px);
-
-}
-
-59% {
-
-opacity: 0.65;
-
-transform:
-translate(-50%, -50%)
-translateX(-5px)
-skewX(-7deg);
-
-}
-
-62% {
-
-opacity: 0.3;
-
-transform:
-translate(-50%, -50%)
-translateX(4px)
-skewX(3deg);
-
-}
-
-66% {
-
-opacity: 0;
-
-}
-
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-/* =========================================
-VIOLET GHOST GLITCH
-========================================= */
-
-@keyframes violet-ghost-cycle {
-
-0%,
-56% {
-
-opacity: 0;
-
-transform:
-translate(-50%, -50%)
-translateX(2px);
 
 }
 
 60% {
 
-opacity: 0.55;
+opacity: 0.4;
 
 transform:
-translate(-50%, -50%)
-translateX(5px)
-skewX(6deg);
 
-}
-
-63% {
-
-opacity: 0.25;
-
-transform:
-translate(-50%, -50%)
-translateX(-4px)
-skewX(-3deg);
-
-}
-
-67% {
-
-opacity: 0;
-
-}
-
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-/* =========================================
-DIGITAL CUT ANIMATION
-========================================= */
-
-@keyframes x-cut-cycle {
-
-0%,
-32% {
-
-opacity: 0;
-
-transform:
-translateX(0)
-scaleX(0);
-
-}
-
-58% {
-
-opacity: 0;
-
-}
-
-61% {
-
-opacity: 0.8;
-
-transform:
-translateX(-3px)
-scaleX(1);
+translateX(3px);
 
 }
 
 64% {
 
-opacity: 0.4;
-
-transform:
-translateX(3px)
-scaleX(0.7);
-
-}
-
-67% {
-
 opacity: 0;
 
 transform:
-translateX(0)
-scaleX(0);
+
+translateX(0);
 
 }
 
@@ -1198,51 +813,91 @@ opacity: 0;
 }
 
 /* =========================================
-GLITCH FRAGMENT ANIMATIONS
+GLITCH SLICE 1
 ========================================= */
 
-@keyframes fragment-cycle-1 {
+@keyframes glitch-slice-1 {
 
 0%,
-18% {
+52% {
 
 opacity: 0;
 
 transform:
+
 translateX(0)
 scaleX(0.2);
 
 }
 
-24% {
+57% {
 
-opacity: 0.65;
+opacity: 0.8;
 
 transform:
+
 translateX(-5px)
 scaleX(1);
 
 }
 
-31% {
+60% {
 
-opacity: 0;
-
-}
-
-58% {
-
-opacity: 0;
-
-}
-
-62% {
-
-opacity: 0.5;
+opacity: 0.35;
 
 transform:
+
+translateX(4px)
+scaleX(0.7);
+
+}
+
+64%,
+100% {
+
+opacity: 0;
+
+}
+
+}
+
+/* =========================================
+GLITCH SLICE 2
+========================================= */
+
+@keyframes glitch-slice-2 {
+
+0%,
+56% {
+
+opacity: 0;
+
+transform:
+
+translateX(0)
+scaleX(0.3);
+
+}
+
+60% {
+
+opacity: 0.85;
+
+transform:
+
 translateX(5px)
-scaleX(0.8);
+scaleX(1);
+
+}
+
+63% {
+
+opacity: 0.35;
+
+transform:
+
+translateX(-4px)
+scaleX(0.65);
 
 }
 
@@ -1255,92 +910,41 @@ opacity: 0;
 
 }
 
-@keyframes fragment-cycle-2 {
+/* =========================================
+GLITCH SLICE 3
+========================================= */
+
+@keyframes glitch-slice-3 {
 
 0%,
-22% {
+58% {
 
 opacity: 0;
 
+transform:
+
+translateX(0)
+scaleX(0.2);
+
 }
 
-29% {
+62% {
 
-opacity: 0.6;
+opacity: 0.75;
 
 transform:
-translateX(5px)
+
+translateX(-5px)
 scaleX(1);
-
-}
-
-35% {
-
-opacity: 0;
-
-}
-
-60% {
-
-opacity: 0;
-
-}
-
-64% {
-
-opacity: 0.5;
-
-transform:
-translateX(-4px)
-scaleX(0.8);
-
-}
-
-68%,
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-@keyframes fragment-cycle-3 {
-
-0%,
-25% {
-
-opacity: 0;
-
-}
-
-32% {
-
-opacity: 0.7;
-
-transform:
-translateX(-4px)
-scaleX(1);
-
-}
-
-38% {
-
-opacity: 0;
-
-}
-
-61% {
-
-opacity: 0;
 
 }
 
 65% {
 
-opacity: 0.45;
+opacity: 0.3;
 
 transform:
+
 translateX(4px)
 scaleX(0.7);
 
@@ -1355,144 +959,43 @@ opacity: 0;
 
 }
 
-@keyframes fragment-cycle-4 {
+/* =========================================
+GLITCH SLICE 4
+========================================= */
+
+@keyframes glitch-slice-4 {
 
 0%,
-28% {
+61% {
 
 opacity: 0;
 
+transform:
+
+translateX(0)
+scaleX(0.2);
+
 }
 
-35% {
+65% {
 
-opacity: 0.55;
+opacity: 0.7;
 
 transform:
+
 translateX(4px)
 scaleX(1);
-
-}
-
-41% {
-
-opacity: 0;
-
-}
-
-62% {
-
-opacity: 0;
-
-}
-
-66% {
-
-opacity: 0.4;
-
-transform:
-translateX(-4px)
-scaleX(0.8);
-
-}
-
-70%,
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-@keyframes fragment-cycle-5 {
-
-0%,
-31% {
-
-opacity: 0;
-
-}
-
-38% {
-
-opacity: 0.6;
-
-transform:
-translateX(-5px)
-scaleX(1);
-
-}
-
-44% {
-
-opacity: 0;
-
-}
-
-63% {
-
-opacity: 0;
-
-}
-
-67% {
-
-opacity: 0.5;
-
-transform:
-translateX(5px)
-scaleX(0.8);
-
-}
-
-71%,
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-@keyframes fragment-cycle-6 {
-
-0%,
-34% {
-
-opacity: 0;
-
-}
-
-41% {
-
-opacity: 0.55;
-
-transform:
-translateX(4px)
-scaleX(1);
-
-}
-
-47% {
-
-opacity: 0;
-
-}
-
-64% {
-
-opacity: 0;
 
 }
 
 68% {
 
-opacity: 0.4;
+opacity: 0.25;
 
 transform:
+
 translateX(-3px)
-scaleX(0.7);
+scaleX(0.6);
 
 }
 
@@ -1506,1046 +1009,31 @@ opacity: 0;
 }
 
 /* =========================================
-REDUCED MOTION
+GLITCH SLICE 5
 ========================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@keyframes glitch-slice-5 {
 
-.x-core,
-.x-shard,
-.x-ghost,
-.x-cut,
-.x-slice,
-.fragment {
-
-animation: none !important;
-
-}
-
-.x-core {
-
-opacity: 1;
-
-filter: none;
-
-transform:
-translate(-50%, -50%)
-scale(1);
-
-}
-
-.x-shard {
-
-opacity: 1;
-
-}
-
-.x-ghost,
-.x-cut,
-.fragment {
+0%,
+63% {
 
 opacity: 0;
 
-}
-
-}
-
-/* =========================================
-Ambient Background
-========================================= */
-
-.ambient-canvas {
-position: fixed;
-
-inset: 0;
-
-pointer-events: none;
-
-z-index: 0;
-
-overflow: hidden;
-
-}
-
-.aurora-glow {
-position: absolute;
-
-top: -20%;
-left: 50%;
-
-transform: translateX(-50%);
-
-width: 80vw;
-height: 60vh;
-
-background:
-radial-gradient(
-ellipse at center,
-rgba(123, 63, 228, 0.12) 0%,
-rgba(0, 240, 255, 0.03) 50%,
-transparent 70%
-);
-
-filter: blur(80px);
-
-}
-
-.pulse-grid {
-position: absolute;
-
-inset: 0;
-
-background-image:
-linear-gradient(
-var(--color-border-subtle) 1px,
-transparent 1px
-),
-linear-gradient(
-90deg,
-var(--color-border-subtle) 1px,
-transparent 1px
-);
-
-background-size: 40px 40px;
-
-mask-image:
-radial-gradient(
-circle at center,
-black 0%,
-transparent 80%
-);
-
--webkit-mask-image:
-radial-gradient(
-circle at center,
-black 0%,
-transparent 80%
-);
-
-opacity: 0.15;
-
-}
-
-/* =========================================
-Header Navigation
-========================================= */
-
-.header-nav {
-display: flex;
-
-justify-content: space-between;
-align-items: center;
-
-padding: 1.5rem 2rem;
-
-width: 100%;
-
-}
-
-.nav-brand-text {
-font-weight: var(--font-weight-bold);
-
-letter-spacing: 0.05em;
-
-color: var(--color-text-primary);
-
-}
-
-.nav-links {
-display: flex;
-
-gap: 1.5rem;
-
-}
-
-.nav-link {
-font-size: var(--font-size-small);
-
-color: var(--color-text-secondary);
-
-transition:
-color var(--transition-fast);
-
-}
-
-.nav-link:hover {
-color: var(--color-secondary-cyan);
-}
-
-/* =========================================
-Authentication Card
-========================================= */
-
-.auth-card {
-background: var(--color-bg-surface-1);
-
-border:
-1px solid var(--color-border-subtle);
-
-border-radius: var(--radius-md);
-
-padding: 2.5rem;
-
-max-width: 400px;
-width: 90%;
-
-text-align: center;
-
-}
-
-.auth-title {
-font-size: var(--font-size-heading);
-
-color: var(--color-text-primary);
-
-margin-bottom: 0.5rem;
-
-}
-
-.auth-desc {
-margin-bottom: 2rem;
-}
-
-/* =========================================
-Platform Application Layout
-========================================= */
-
-.app-layout {
-display: flex;
-
-min-height: 100vh;
-
-}
-
-.app-sidebar {
-width: 240px;
-
-background: var(--color-bg-surface-1);
-
-border-right:
-1px solid var(--color-border-subtle);
-
-padding: 2rem 1.5rem;
-
-display: flex;
-
-flex-direction: column;
-
-gap: 2rem;
-
-}
-
-.brand-title-sm {
-font-size: var(--font-size-subheading);
-
-font-weight: var(--font-weight-bold);
-
-letter-spacing: 0.08em;
-
-color: var(--color-text-primary);
-
-}
-
-.app-nav {
-display: flex;
-
-flex-direction: column;
-
-gap: 0.5rem;
-
-}
-
-.nav-item {
-padding: 0.75rem 1rem;
-
-border-radius: var(--radius-sm);
-
-color: var(--color-text-secondary);
-
-font-weight: var(--font-weight-medium);
-
-transition:
-all var(--transition-fast);
-
-}
-
-.nav-item:hover,
-.nav-item.active {
-background: var(--color-bg-surface-2);
-
-color: var(--color-secondary-cyan);
-
-}
-
-.app-main-viewport {
-flex: 1;
-
-display: flex;
-
-justify-content: center;
-align-items: center;
-
-padding: 2rem;
-
-}
-
-.placeholder-container {
-padding: 3rem;
-
-border:
-1px dashed var(--color-border-subtle);
-
-border-radius: var(--radius-md);
-
-text-align: center;
-
-    }/* XERA — Reusable UI Components */
-
-/* =========================================
-Hero Actions / Buttons
-========================================= */
-
-.hero-actions {
-display: flex;
-gap: 1rem;
-width: 100%;
-max-width: 380px;
-}
-
-.btn {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-
-padding: 0.875rem 1.75rem;
-
-font-size: var(--font-size-body);
-font-weight: var(--font-weight-medium);
-
-border-radius: var(--radius-full);
-
-transition: all var(--transition-normal);
-
-width: 100%;
-cursor: pointer;
-
-}
-
-.btn-primary {
-background: var(--color-primary-violet);
-color: var(--color-text-primary);
-
-box-shadow:
-0 4px 20px rgba(123, 63, 228, 0.3);
-
-}
-
-.btn-primary:hover {
-background: var(--color-primary-violet-hover);
-
-box-shadow:
-0 6px 24px rgba(123, 63, 228, 0.5);
-
-transform: translateY(-1px);
-
-}
-
-.btn-secondary {
-background: var(--color-bg-surface-2);
-color: var(--color-text-primary);
-
-border: 1px solid var(--color-border-subtle);
-
-}
-
-.btn-secondary:hover {
-background: var(--color-bg-surface-3);
-border-color: var(--color-border-accent);
-}
-
-/* =========================================
-XERA — SIGNATURE FUTURISTIC X
-Compact Modified X Loading System
-========================================= */
-
-.xera-loader {
-position: relative;
-
-width: 64px;
-height: 64px;
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-margin: 0 auto 1.5rem;
-
-isolation: isolate;
-
-contain: layout paint;
-
-}
-
-/* =========================================
-X MARK CONTAINER
-========================================= */
-
-.x-mark {
-position: relative;
-
-width: 52px;
-height: 52px;
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-}
-
-/* =========================================
-MAIN X CORE
-========================================= */
-
-.x-core {
-position: absolute;
-
-top: 50%;
-left: 50%;
-
-width: 48px;
-height: 48px;
-
 transform:
-translate(-50%, -50%);
 
-transform-origin: center;
-
-animation:
-x-core-cycle
-3.2s
-cubic-bezier(0.65, 0, 0.35, 1)
-infinite;
+translateX(0)
+scaleX(0.3);
 
 }
 
-/* =========================================
-X SHARDS
-The X is built from 4 separated pieces
-========================================= */
-
-.x-shard {
-position: absolute;
-
-width: 5px;
-height: 28px;
-
-top: 10px;
-
-border-radius: 2px;
-
-background:
-linear-gradient(
-180deg,
-#FFFFFF 0%,
-#00D9E8 45%,
-#7B3FE4 100%
-);
-
-box-shadow:
-0 0 5px rgba(0, 240, 255, 0.25),
-0 0 12px rgba(123, 63, 228, 0.15);
-
-transform-origin:
-center center;
-
-}
-
-/* =========================================
-LEFT UPPER X SHARD
-========================================= */
-
-.shard-1 {
-
-left: 14px;
-
-transform:
-rotate(42deg);
-
-animation:
-shard-1-cycle
-3.2s
-infinite;
-
-}
-
-/* =========================================
-RIGHT UPPER X SHARD
-========================================= */
-
-.shard-2 {
-
-right: 14px;
-
-transform:
-rotate(-42deg);
-
-animation:
-shard-2-cycle
-3.2s
-infinite;
-
-}
-
-/* =========================================
-LEFT LOWER X SHARD
-========================================= */
-
-.shard-3 {
-
-left: 14px;
-
-transform:
-rotate(-42deg);
-
-animation:
-shard-3-cycle
-3.2s
-infinite;
-
-}
-
-/* =========================================
-RIGHT LOWER X SHARD
-========================================= */
-
-.shard-4 {
-
-right: 14px;
-
-transform:
-rotate(42deg);
-
-animation:
-shard-4-cycle
-3.2s
-infinite;
-
-}
-
-/* =========================================
-DIGITAL CUTS
-Creates the modified XERA identity
-========================================= */
-
-.x-cut {
-
-position: absolute;
-
-height: 2px;
-
-background:
-#080A0F;
-
-z-index: 8;
-
-opacity: 0;
-
-}
-
-/* Upper Digital Cut */
-
-.cut-1 {
-
-width: 13px;
-
-top: 18px;
-left: 18px;
-
-transform:
-rotate(-5deg);
-
-animation:
-x-cut-cycle
-3.2s
-infinite;
-
-}
-
-/* Lower Digital Cut */
-
-.cut-2 {
-
-width: 11px;
-
-bottom: 17px;
-right: 17px;
-
-transform:
-rotate(5deg);
-
-animation:
-x-cut-cycle
-3.2s
-0.08s
-infinite;
-
-}
-
-/* =========================================
-CYAN GHOST X
-========================================= */
-
-.x-ghost {
-
-position: absolute;
-
-top: 50%;
-left: 50%;
-
-width: 48px;
-height: 48px;
-
-pointer-events: none;
-
-opacity: 0;
-
-}
-
-/* Cyan Ghost */
-
-.x-ghost-cyan {
-
-transform:
-translate(-50%, -50%)
-translateX(-3px);
-
-animation:
-cyan-ghost-cycle
-3.2s
-infinite;
-
-}
-
-.x-ghost-cyan span {
-
-position: absolute;
-
-top: 50%;
-left: 50%;
-
-width: 4px;
-height: 29px;
-
-background:
-#00D9E8;
-
-box-shadow:
-0 0 7px rgba(0, 217, 232, 0.45);
-
-transform:
-translate(-50%, -50%)
-rotate(42deg);
-
-}
-
-/* =========================================
-VIOLET GHOST X
-========================================= */
-
-.x-ghost-violet {
-
-transform:
-translate(-50%, -50%)
-translateX(3px);
-
-animation:
-violet-ghost-cycle
-3.2s
-infinite;
-
-}
-
-.x-ghost-violet span {
-
-position: absolute;
-
-top: 50%;
-left: 50%;
-
-width: 4px;
-height: 29px;
-
-background:
-#7B3FE4;
-
-box-shadow:
-0 0 7px rgba(123, 63, 228, 0.4);
-
-transform:
-translate(-50%, -50%)
-rotate(-42deg);
-
-}
-
-/* =========================================
-GLITCH FRAGMENTS
-========================================= */
-
-.x-glitch-fragments {
-
-position: absolute;
-
-inset: 0;
-
-pointer-events: none;
-
-}
-
-/* Base Fragment */
-
-.fragment {
-
-position: absolute;
-
-display: block;
-
-height: 2px;
-
-opacity: 0;
-
-background:
-linear-gradient(
-90deg,
-#00D9E8,
-#FFFFFF,
-#7B3FE4
-);
-
-box-shadow:
-0 0 5px rgba(0, 217, 232, 0.3);
-
-}
-
-/* Fragment 1 */
-
-.fragment-1 {
-
-width: 10px;
-
-top: 15px;
-left: 7px;
-
-animation:
-fragment-cycle-1
-3.2s
-infinite;
-
-}
-
-/* Fragment 2 */
-
-.fragment-2 {
-
-width: 8px;
-
-top: 21px;
-right: 5px;
-
-animation:
-fragment-cycle-2
-3.2s
-infinite;
-
-}
-
-/* Fragment 3 */
-
-.fragment-3 {
-
-width: 13px;
-
-top: 26px;
-left: 19px;
-
-animation:
-fragment-cycle-3
-3.2s
-infinite;
-
-}
-
-/* Fragment 4 */
-
-.fragment-4 {
-
-width: 7px;
-
-bottom: 19px;
-left: 6px;
-
-animation:
-fragment-cycle-4
-3.2s
-infinite;
-
-}
-
-/* Fragment 5 */
-
-.fragment-5 {
-
-width: 11px;
-
-bottom: 13px;
-right: 8px;
-
-animation:
-fragment-cycle-5
-3.2s
-infinite;
-
-}
-
-/* Fragment 6 */
-
-.fragment-6 {
-
-width: 6px;
-
-top: 31px;
-right: 2px;
-
-animation:
-fragment-cycle-6
-3.2s
-infinite;
-
-}
-
-/* =========================================
-MAIN X CYCLE
-
-0–18%   = X disappears
-18–42%  = X glitches / rebuilds
-42–58%  = X fully visible
-58–72%  = reverse glitch
-72–100% = X disappears / next cycle
-========================================= */
-
-@keyframes x-core-cycle {
-
-/* X starts invisible */
-
-0% {
-
-opacity: 0;
-
-filter:
-blur(4px);
-
-transform:
-translate(-50%, -50%)
-scale(0.7)
-skewX(0deg);
-
-}
-
-/* Digital appearance */
-
-12% {
-
-opacity: 0.18;
-
-filter:
-blur(2px);
-
-transform:
-translate(-50%, -50%)
-scale(0.78)
-skewX(-5deg);
-
-}
-
-/* X begins forming */
-
-24% {
+67% {
 
 opacity: 0.65;
 
-filter:
-blur(0.8px);
-
 transform:
-translate(-50%, -50%)
-scale(0.9)
-skewX(3deg);
 
-}
-
-/* X formed */
-
-38% {
-
-opacity: 1;
-
-filter:
-blur(0);
-
-transform:
-translate(-50%, -50%)
-scale(1)
-skewX(0deg);
-
-}
-
-/* Calm hold */
-
-42%,
-55% {
-
-opacity: 1;
-
-transform:
-translate(-50%, -50%)
-scale(1);
-
-}
-
-/* Reverse glitch begins */
-
-59% {
-
-opacity: 0.85;
-
-transform:
-translate(-50%, -50%)
-translateX(2px)
-scale(1.01)
-skewX(-4deg);
-
-}
-
-/* Reverse displacement */
-
-63% {
-
-opacity: 0.6;
-
-transform:
-translate(-50%, -50%)
-translateX(-3px)
-scale(0.97)
-skewX(5deg);
-
-}
-
-/* X breaking apart */
-
-70% {
-
-opacity: 0.25;
-
-filter:
-blur(1.5px);
-
-transform:
-translate(-50%, -50%)
-scale(0.84)
-skewX(-3deg);
-
-}
-
-/* Almost gone */
-
-84% {
-
-opacity: 0.08;
-
-filter:
-blur(3px);
-
-transform:
-translate(-50%, -50%)
-scale(0.72);
-
-}
-
-/* New cycle */
-
-100% {
-
-opacity: 0;
-
-filter:
-blur(4px);
-
-transform:
-translate(-50%, -50%)
-scale(0.7);
-
-}
-
-}
-
-/* =========================================
-SHARD 1
-========================================= */
-
-@keyframes shard-1-cycle {
-
-0%,
-10% {
-
-opacity: 0;
-
-transform:
-translate(-8px, 6px)
-rotate(34deg)
-scale(0.5);
-
-}
-
-20% {
-
-opacity: 0.7;
-
-transform:
-translate(-3px, 2px)
-rotate(40deg)
-scale(0.8);
-
-}
-
-34% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(42deg)
-scale(1);
-
-}
-
-55% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(42deg)
-scale(1);
-
-}
-
-62% {
-
-opacity: 0.75;
-
-transform:
-translate(3px, -2px)
-rotate(45deg)
-scale(0.95);
+translateX(-4px)
+scaleX(1);
 
 }
 
@@ -2554,381 +1042,55 @@ scale(0.95);
 opacity: 0.2;
 
 transform:
-translate(-5px, 4px)
-rotate(35deg)
-scale(0.7);
+
+translateX(3px)
+scaleX(0.6);
 
 }
 
+74%,
 100% {
 
 opacity: 0;
-
-transform:
-translate(-8px, 6px)
-rotate(34deg)
-scale(0.5);
 
 }
 
 }
 
 /* =========================================
-SHARD 2
+TINY FRAGMENT GLITCHES
 ========================================= */
 
-@keyframes shard-2-cycle {
-
-0%,
-12% {
-
-opacity: 0;
-
-transform:
-translate(8px, -5px)
-rotate(-34deg)
-scale(0.5);
-
-}
-
-22% {
-
-opacity: 0.7;
-
-transform:
-translate(3px, -2px)
-rotate(-40deg)
-scale(0.8);
-
-}
-
-36% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(-42deg)
-scale(1);
-
-}
-
-55% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(-42deg)
-scale(1);
-
-}
-
-63% {
-
-opacity: 0.7;
-
-transform:
-translate(-3px, 2px)
-rotate(-45deg)
-scale(0.95);
-
-}
-
-72% {
-
-opacity: 0.2;
-
-transform:
-translate(5px, -4px)
-rotate(-35deg)
-scale(0.7);
-
-}
-
-100% {
-
-opacity: 0;
-
-transform:
-translate(8px, -5px)
-rotate(-34deg)
-scale(0.5);
-
-}
-
-}
-
-/* =========================================
-SHARD 3
-========================================= */
-
-@keyframes shard-3-cycle {
-
-0%,
-14% {
-
-opacity: 0;
-
-transform:
-translate(-7px, -6px)
-rotate(-34deg)
-scale(0.5);
-
-}
-
-24% {
-
-opacity: 0.65;
-
-transform:
-translate(-3px, -2px)
-rotate(-40deg)
-scale(0.8);
-
-}
-
-38% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(-42deg)
-scale(1);
-
-}
-
-56% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(-42deg)
-scale(1);
-
-}
-
-64% {
-
-opacity: 0.7;
-
-transform:
-translate(3px, 2px)
-rotate(-45deg)
-scale(0.94);
-
-}
-
-74% {
-
-opacity: 0.18;
-
-transform:
-translate(-5px, -4px)
-rotate(-35deg)
-scale(0.7);
-
-}
-
-100% {
-
-opacity: 0;
-
-transform:
-translate(-7px, -6px)
-rotate(-34deg)
-scale(0.5);
-
-}
-
-}
-
-/* =========================================
-SHARD 4
-========================================= */
-
-@keyframes shard-4-cycle {
-
-0%,
-16% {
-
-opacity: 0;
-
-transform:
-translate(7px, 6px)
-rotate(34deg)
-scale(0.5);
-
-}
-
-26% {
-
-opacity: 0.65;
-
-transform:
-translate(3px, 2px)
-rotate(40deg)
-scale(0.8);
-
-}
-
-40% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(42deg)
-scale(1);
-
-}
-
-56% {
-
-opacity: 1;
-
-transform:
-translate(0, 0)
-rotate(42deg)
-scale(1);
-
-}
-
-65% {
-
-opacity: 0.7;
-
-transform:
-translate(-3px, -2px)
-rotate(45deg)
-scale(0.94);
-
-}
-
-76% {
-
-opacity: 0.18;
-
-transform:
-translate(5px, 4px)
-rotate(35deg)
-scale(0.7);
-
-}
-
-100% {
-
-opacity: 0;
-
-transform:
-translate(7px, 6px)
-rotate(34deg)
-scale(0.5);
-
-}
-
-}
-
-/* =========================================
-CYAN GHOST GLITCH
-========================================= */
-
-@keyframes cyan-ghost-cycle {
+@keyframes fragment-glitch-1 {
 
 0%,
 54% {
 
 opacity: 0;
 
-transform:
-translate(-50%, -50%)
-translateX(-2px);
-
 }
 
 59% {
 
-opacity: 0.65;
+opacity: 0.7;
 
 transform:
-translate(-50%, -50%)
-translateX(-5px)
-skewX(-7deg);
 
-}
-
-62% {
-
-opacity: 0.3;
-
-transform:
-translate(-50%, -50%)
-translateX(4px)
-skewX(3deg);
-
-}
-
-66% {
-
-opacity: 0;
-
-}
-
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-/* =========================================
-VIOLET GHOST GLITCH
-========================================= */
-
-@keyframes violet-ghost-cycle {
-
-0%,
-56% {
-
-opacity: 0;
-
-transform:
-translate(-50%, -50%)
-translateX(2px);
-
-}
-
-60% {
-
-opacity: 0.55;
-
-transform:
-translate(-50%, -50%)
-translateX(5px)
-skewX(6deg);
+translateX(-5px);
 
 }
 
 63% {
 
-opacity: 0.25;
+opacity: 0.2;
 
 transform:
-translate(-50%, -50%)
-translateX(-4px)
-skewX(-3deg);
+
+translateX(3px);
 
 }
 
-67% {
-
-opacity: 0;
-
-}
-
+66%,
 100% {
 
 opacity: 0;
@@ -2937,101 +1099,10 @@ opacity: 0;
 
 }
 
-/* =========================================
-DIGITAL CUT ANIMATION
-========================================= */
-
-@keyframes x-cut-cycle {
+@keyframes fragment-glitch-2 {
 
 0%,
-32% {
-
-opacity: 0;
-
-transform:
-translateX(0)
-scaleX(0);
-
-}
-
-58% {
-
-opacity: 0;
-
-}
-
-61% {
-
-opacity: 0.8;
-
-transform:
-translateX(-3px)
-scaleX(1);
-
-}
-
-64% {
-
-opacity: 0.4;
-
-transform:
-translateX(3px)
-scaleX(0.7);
-
-}
-
-67% {
-
-opacity: 0;
-
-transform:
-translateX(0)
-scaleX(0);
-
-}
-
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-/* =========================================
-GLITCH FRAGMENT ANIMATIONS
-========================================= */
-
-@keyframes fragment-cycle-1 {
-
-0%,
-18% {
-
-opacity: 0;
-
-transform:
-translateX(0)
-scaleX(0.2);
-
-}
-
-24% {
-
-opacity: 0.65;
-
-transform:
-translateX(-5px)
-scaleX(1);
-
-}
-
-31% {
-
-opacity: 0;
-
-}
-
-58% {
+57% {
 
 opacity: 0;
 
@@ -3039,111 +1110,21 @@ opacity: 0;
 
 62% {
 
-opacity: 0.5;
-
-transform:
-translateX(5px)
-scaleX(0.8);
-
-}
-
-67%,
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-@keyframes fragment-cycle-2 {
-
-0%,
-22% {
-
-opacity: 0;
-
-}
-
-29% {
-
 opacity: 0.6;
 
 transform:
-translateX(5px)
-scaleX(1);
+
+translateX(5px);
 
 }
 
-35% {
+66% {
 
-opacity: 0;
-
-}
-
-60% {
-
-opacity: 0;
-
-}
-
-64% {
-
-opacity: 0.5;
+opacity: 0.2;
 
 transform:
-translateX(-4px)
-scaleX(0.8);
 
-}
-
-68%,
-100% {
-
-opacity: 0;
-
-}
-
-}
-
-@keyframes fragment-cycle-3 {
-
-0%,
-25% {
-
-opacity: 0;
-
-}
-
-32% {
-
-opacity: 0.7;
-
-transform:
-translateX(-4px)
-scaleX(1);
-
-}
-
-38% {
-
-opacity: 0;
-
-}
-
-61% {
-
-opacity: 0;
-
-}
-
-65% {
-
-opacity: 0.45;
-
-transform:
-translateX(4px)
-scaleX(0.7);
+translateX(-3px);
 
 }
 
@@ -3156,48 +1137,36 @@ opacity: 0;
 
 }
 
-@keyframes fragment-cycle-4 {
+@keyframes fragment-glitch-3 {
 
 0%,
-28% {
+60% {
 
 opacity: 0;
 
 }
 
-35% {
+65% {
 
 opacity: 0.55;
 
 transform:
-translateX(4px)
-scaleX(1);
+
+translateX(-4px);
 
 }
 
-41% {
+69% {
 
-opacity: 0;
-
-}
-
-62% {
-
-opacity: 0;
-
-}
-
-66% {
-
-opacity: 0.4;
+opacity: 0.15;
 
 transform:
-translateX(-4px)
-scaleX(0.8);
+
+translateX(3px);
 
 }
 
-70%,
+72%,
 100% {
 
 opacity: 0;
@@ -3206,32 +1175,10 @@ opacity: 0;
 
 }
 
-@keyframes fragment-cycle-5 {
+@keyframes fragment-glitch-4 {
 
 0%,
-31% {
-
-opacity: 0;
-
-}
-
-38% {
-
-opacity: 0.6;
-
-transform:
-translateX(-5px)
-scaleX(1);
-
-}
-
-44% {
-
-opacity: 0;
-
-}
-
-63% {
+62% {
 
 opacity: 0;
 
@@ -3239,65 +1186,25 @@ opacity: 0;
 
 67% {
 
-opacity: 0.5;
+opacity: 0.6;
 
 transform:
-translateX(5px)
-scaleX(0.8);
+
+translateX(4px);
 
 }
 
-71%,
-100% {
+71% {
 
-opacity: 0;
-
-}
-
-}
-
-@keyframes fragment-cycle-6 {
-
-0%,
-34% {
-
-opacity: 0;
-
-}
-
-41% {
-
-opacity: 0.55;
+opacity: 0.15;
 
 transform:
-translateX(4px)
-scaleX(1);
+
+translateX(-3px);
 
 }
 
-47% {
-
-opacity: 0;
-
-}
-
-64% {
-
-opacity: 0;
-
-}
-
-68% {
-
-opacity: 0.4;
-
-transform:
-translateX(-3px)
-scaleX(0.7);
-
-}
-
-72%,
+74%,
 100% {
 
 opacity: 0;
@@ -3312,38 +1219,32 @@ REDUCED MOTION
 
 @media (prefers-reduced-motion: reduce) {
 
-.x-core,
-.x-shard,
-.x-ghost,
-.x-cut,
-.x-slice,
-.fragment {
+.x-shape,
+.x-stroke,
+.x-stroke::before,
+.x-stroke::after,
+.x-glitch-line,
+.x-fragment {
 
 animation: none !important;
 
 }
 
-.x-core {
+.x-shape {
 
 opacity: 1;
 
 filter: none;
 
 transform:
+
 translate(-50%, -50%)
 scale(1);
 
 }
 
-.x-shard {
-
-opacity: 1;
-
-}
-
-.x-ghost,
-.x-cut,
-.fragment {
+.x-glitch-line,
+.x-fragment {
 
 opacity: 0;
 
@@ -3356,6 +1257,7 @@ Ambient Background
 ========================================= */
 
 .ambient-canvas {
+
 position: fixed;
 
 inset: 0;
@@ -3369,22 +1271,29 @@ overflow: hidden;
 }
 
 .aurora-glow {
+
 position: absolute;
 
 top: -20%;
+
 left: 50%;
 
 transform: translateX(-50%);
 
 width: 80vw;
+
 height: 60vh;
 
 background:
+
 radial-gradient(
-ellipse at center,
-rgba(123, 63, 228, 0.12) 0%,
-rgba(0, 240, 255, 0.03) 50%,
-transparent 70%
+    ellipse at center,
+
+    rgba(123, 63, 228, 0.12) 0%,
+
+    rgba(0, 240, 255, 0.03) 50%,
+
+    transparent 70%
 );
 
 filter: blur(80px);
@@ -3392,35 +1301,44 @@ filter: blur(80px);
 }
 
 .pulse-grid {
+
 position: absolute;
 
 inset: 0;
 
 background-image:
+
 linear-gradient(
-var(--color-border-subtle) 1px,
-transparent 1px
+    var(--color-border-subtle) 1px,
+    transparent 1px
 ),
+
 linear-gradient(
-90deg,
-var(--color-border-subtle) 1px,
-transparent 1px
+    90deg,
+    var(--color-border-subtle) 1px,
+    transparent 1px
 );
 
 background-size: 40px 40px;
 
 mask-image:
+
 radial-gradient(
-circle at center,
-black 0%,
-transparent 80%
+    circle at center,
+
+    black 0%,
+
+    transparent 80%
 );
 
 -webkit-mask-image:
+
 radial-gradient(
-circle at center,
-black 0%,
-transparent 80%
+    circle at center,
+
+    black 0%,
+
+    transparent 80%
 );
 
 opacity: 0.15;
@@ -3432,9 +1350,11 @@ Header Navigation
 ========================================= */
 
 .header-nav {
+
 display: flex;
 
 justify-content: space-between;
+
 align-items: center;
 
 padding: 1.5rem 2rem;
@@ -3444,6 +1364,7 @@ width: 100%;
 }
 
 .nav-brand-text {
+
 font-weight: var(--font-weight-bold);
 
 letter-spacing: 0.05em;
@@ -3453,6 +1374,7 @@ color: var(--color-text-primary);
 }
 
 .nav-links {
+
 display: flex;
 
 gap: 1.5rem;
@@ -3460,17 +1382,21 @@ gap: 1.5rem;
 }
 
 .nav-link {
+
 font-size: var(--font-size-small);
 
 color: var(--color-text-secondary);
 
 transition:
+
 color var(--transition-fast);
 
 }
 
 .nav-link:hover {
+
 color: var(--color-secondary-cyan);
+
 }
 
 /* =========================================
@@ -3478,9 +1404,11 @@ Authentication Card
 ========================================= */
 
 .auth-card {
+
 background: var(--color-bg-surface-1);
 
 border:
+
 1px solid var(--color-border-subtle);
 
 border-radius: var(--radius-md);
@@ -3488,6 +1416,7 @@ border-radius: var(--radius-md);
 padding: 2.5rem;
 
 max-width: 400px;
+
 width: 90%;
 
 text-align: center;
@@ -3495,6 +1424,7 @@ text-align: center;
 }
 
 .auth-title {
+
 font-size: var(--font-size-heading);
 
 color: var(--color-text-primary);
@@ -3504,7 +1434,9 @@ margin-bottom: 0.5rem;
 }
 
 .auth-desc {
+
 margin-bottom: 2rem;
+
 }
 
 /* =========================================
@@ -3512,6 +1444,7 @@ Platform Application Layout
 ========================================= */
 
 .app-layout {
+
 display: flex;
 
 min-height: 100vh;
@@ -3519,11 +1452,13 @@ min-height: 100vh;
 }
 
 .app-sidebar {
+
 width: 240px;
 
 background: var(--color-bg-surface-1);
 
 border-right:
+
 1px solid var(--color-border-subtle);
 
 padding: 2rem 1.5rem;
@@ -3537,6 +1472,7 @@ gap: 2rem;
 }
 
 .brand-title-sm {
+
 font-size: var(--font-size-subheading);
 
 font-weight: var(--font-weight-bold);
@@ -3548,6 +1484,7 @@ color: var(--color-text-primary);
 }
 
 .app-nav {
+
 display: flex;
 
 flex-direction: column;
@@ -3557,6 +1494,7 @@ gap: 0.5rem;
 }
 
 .nav-item {
+
 padding: 0.75rem 1rem;
 
 border-radius: var(--radius-sm);
@@ -3566,12 +1504,14 @@ color: var(--color-text-secondary);
 font-weight: var(--font-weight-medium);
 
 transition:
+
 all var(--transition-fast);
 
 }
 
 .nav-item:hover,
 .nav-item.active {
+
 background: var(--color-bg-surface-2);
 
 color: var(--color-secondary-cyan);
@@ -3579,11 +1519,13 @@ color: var(--color-secondary-cyan);
 }
 
 .app-main-viewport {
+
 flex: 1;
 
 display: flex;
 
 justify-content: center;
+
 align-items: center;
 
 padding: 2rem;
@@ -3591,13 +1533,15 @@ padding: 2rem;
 }
 
 .placeholder-container {
+
 padding: 3rem;
 
 border:
+
 1px dashed var(--color-border-subtle);
 
 border-radius: var(--radius-md);
 
 text-align: center;
 
- }
+}
