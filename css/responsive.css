@@ -1,0 +1,137 @@
+/* XERA — Responsive Design System */
+
+
+/* =========================================
+   Tablet & Mobile Layout
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Platform Layout */
+    .app-layout {
+        flex-direction: column;
+    }
+
+    /* Sidebar becomes horizontal navigation */
+    .app-sidebar {
+        width: 100%;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--color-border-subtle);
+
+        padding: 1rem;
+
+        gap: 1rem;
+    }
+
+    .app-nav {
+        flex-direction: row;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .app-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-item {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    /* Main Viewport */
+    .app-main-viewport {
+        min-height: calc(100vh - 130px);
+
+        padding: 1rem;
+    }
+}
+
+
+/* =========================================
+   Small Mobile Devices
+   ========================================= */
+
+@media (max-width: 640px) {
+
+    /* Hero Buttons */
+    .hero-actions {
+        flex-direction: column;
+
+        gap: 0.75rem;
+    }
+
+    /* Header */
+    .header-nav {
+        padding: 1rem;
+    }
+
+    /* Navigation */
+    .nav-links {
+        gap: 1rem;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+    /* Main Content */
+    .main-content {
+        padding: 1.5rem 1rem;
+    }
+
+    /* Authentication */
+    .auth-card {
+        padding: 2rem 1.25rem;
+    }
+
+    /* XERA Pulse */
+    .xera-pulse-symbol {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+
+/* =========================================
+   Desktop Layout
+   ========================================= */
+
+@media (min-width: 1024px) {
+
+    .main-content {
+        padding: 4rem;
+    }
+}
+
+
+/* =========================================
+   Accessibility — Reduced Motion
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pulse-ring.outer {
+        animation: none;
+
+        opacity: 0.3;
+    }
+
+    .btn,
+    .nav-link,
+    .nav-item {
+        transition: none;
+    }
+}
