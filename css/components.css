@@ -176,17 +176,815 @@
     0%, 86%, 100% { transform: translate(0, 0); opacity: 0; }
     87% { transform: translate(-3px, 1px); opacity: 0.75; }
     90% { transform: translate(2px, -2px); opacity: 0.6; }
-    93% { transform: translate(0, 0); opacity: 0; }
+
+/* =========================================
+XERA — SIGNATURE FUTURISTIC X LOADER
+========================================= */
+
+.xera-loader {
+position: relative;
+
+width: 120px;
+height: 120px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin: 0 auto 1.5rem;
+
+isolation: isolate;
+
+/* Prevents animation from affecting layout */
+contain: layout paint;
+
+/* Soft breathing presence */
+animation: x-loader-breathe 4s ease-in-out infinite;
+
 }
 
-@keyframes glitch-slice-pink {
-    0%, 88%, 100% { transform: translate(0, 0); opacity: 0; }
-    89% { transform: translate(3px, -1px); opacity: 0.75; }
-    92% { transform: translate(-2px, 1px); opacity: 0.6; }
-    94% { transform: translate(0, 0); opacity: 0; }
-   }
-   
+/* =========================================
+ATMOSPHERIC AURA
+========================================= */
 
+.x-loader-aura {
+position: absolute;
+
+width: 70px;
+height: 70px;
+
+border-radius: 50%;
+
+background:
+    radial-gradient(
+        circle,
+        rgba(0, 240, 255, 0.16) 0%,
+        rgba(123, 63, 228, 0.12) 35%,
+        transparent 72%
+    );
+
+filter: blur(14px);
+
+z-index: -2;
+
+animation:
+    aura-pulse 3.5s ease-in-out infinite;
+
+}
+
+/* =========================================
+ORBITAL RINGS
+========================================= */
+
+.x-orbit {
+position: absolute;
+
+top: 50%;
+left: 50%;
+
+border-radius: 50%;
+
+border: 1px solid transparent;
+
+transform-style: preserve-3d;
+
+pointer-events: none;
+
+}
+
+/* Cyan orbit */
+.x-orbit-1 {
+width: 82px;
+height: 82px;
+
+border-top-color: rgba(0, 240, 255, 0.8);
+border-right-color: rgba(0, 240, 255, 0.12);
+
+transform:
+    translate(-50%, -50%)
+    rotateX(62deg)
+    rotateZ(0deg);
+
+animation:
+    orbit-spin-1 5s linear infinite;
+
+}
+
+/* Violet orbit */
+.x-orbit-2 {
+width: 96px;
+height: 96px;
+
+border-bottom-color: rgba(123, 63, 228, 0.75);
+border-left-color: rgba(123, 63, 228, 0.12);
+
+transform:
+    translate(-50%, -50%)
+    rotateX(68deg)
+    rotateY(25deg);
+
+animation:
+    orbit-spin-2 7s linear infinite reverse;
+
+}
+
+/* Ultra subtle outer orbit */
+.x-orbit-3 {
+width: 108px;
+height: 108px;
+
+border-top-color: rgba(255, 255, 255, 0.16);
+border-bottom-color: rgba(0, 240, 255, 0.08);
+
+transform:
+    translate(-50%, -50%)
+    rotateX(70deg)
+    rotateY(-35deg);
+
+animation:
+    orbit-spin-3 10s linear infinite;
+
+}
+
+/* =========================================
+SCANNING RING
+========================================= */
+
+.x-scan-ring {
+position: absolute;
+
+width: 68px;
+height: 68px;
+
+border-radius: 50%;
+
+border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+box-shadow:
+    0 0 15px rgba(0, 240, 255, 0.08);
+
+overflow: hidden;
+
+}
+
+/* Moving scanner beam */
+.x-scan-ring::after {
+content: "";
+
+position: absolute;
+
+left: 50%;
+top: -10px;
+
+width: 1px;
+height: 88px;
+
+background:
+    linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 240, 255, 0.7),
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+
+box-shadow:
+    0 0 10px rgba(0, 240, 255, 0.5);
+
+transform-origin: center;
+
+animation:
+    scan-beam 3s linear infinite;
+
+}
+
+/* =========================================
+MAIN X SYMBOL
+========================================= */
+
+.x-symbol {
+position: relative;
+
+width: 54px;
+height: 54px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-family: "Inter", sans-serif;
+
+font-size: 54px;
+font-weight: 700;
+
+line-height: 1;
+
+letter-spacing: -0.08em;
+
+transform: translateZ(0);
+
+animation:
+    x-symbol-float 3.5s ease-in-out infinite;
+
+}
+
+/* =========================================
+CLEAN MAIN X
+========================================= */
+
+.x-main {
+position: relative;
+
+z-index: 5;
+
+color: #ffffff;
+
+text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 14px rgba(0, 240, 255, 0.45),
+    0 0 28px rgba(123, 63, 228, 0.35);
+
+animation:
+    x-core-flicker 4s infinite;
+
+}
+
+/* =========================================
+GLITCH COLOR LAYERS
+========================================= */
+
+.x-glitch {
+position: absolute;
+
+z-index: 2;
+
+color: transparent;
+
+pointer-events: none;
+
+opacity: 0;
+
+mix-blend-mode: screen;
+
+}
+
+/* Cyan digital ghost */
+.x-glitch-cyan {
+-webkit-text-stroke:
+1px rgba(0, 240, 255, 0.9);
+
+text-shadow:
+    -3px 0 rgba(0, 240, 255, 0.7);
+
+animation:
+    glitch-cyan-burst 4.2s infinite;
+
+}
+
+/* Pink digital ghost */
+.x-glitch-pink {
+-webkit-text-stroke:
+1px rgba(255, 0, 85, 0.8);
+
+text-shadow:
+    3px 0 rgba(255, 0, 85, 0.6);
+
+animation:
+    glitch-pink-burst 4.2s infinite;
+
+}
+
+/* =========================================
+DIGITAL GLITCH CUTS
+========================================= */
+
+.x-cut {
+position: absolute;
+
+z-index: 10;
+
+height: 2px;
+
+background: rgba(255, 255, 255, 0.9);
+
+box-shadow:
+    0 0 8px rgba(0, 240, 255, 0.8);
+
+opacity: 0;
+
+pointer-events: none;
+
+}
+
+.x-cut-1 {
+width: 24px;
+top: 18px;
+left: 8px;
+
+animation:
+    digital-cut-1 4.2s infinite;
+
+}
+
+.x-cut-2 {
+width: 14px;
+top: 29px;
+right: 4px;
+
+animation:
+    digital-cut-2 4.2s infinite;
+
+}
+
+.x-cut-3 {
+width: 20px;
+bottom: 16px;
+left: 17px;
+
+animation:
+    digital-cut-3 4.2s infinite;
+
+}
+
+/* =========================================
+FLOATING DIGITAL PARTICLES
+========================================= */
+
+.x-particle {
+position: absolute;
+
+width: 2px;
+height: 2px;
+
+border-radius: 50%;
+
+background: #00F0FF;
+
+box-shadow:
+    0 0 8px rgba(0, 240, 255, 0.8);
+
+opacity: 0;
+
+}
+
+/* Particle positions */
+.x-particle-1 {
+top: 18px;
+left: 20px;
+
+animation:
+    particle-float-1 3.5s ease-in-out infinite;
+
+}
+
+.x-particle-2 {
+top: 30px;
+right: 15px;
+
+background: #7B3FE4;
+
+animation:
+    particle-float-2 4s ease-in-out infinite;
+
+}
+
+.x-particle-3 {
+bottom: 18px;
+left: 18px;
+
+animation:
+    particle-float-3 4.5s ease-in-out infinite;
+
+}
+
+.x-particle-4 {
+bottom: 25px;
+right: 22px;
+
+background: #FFFFFF;
+
+animation:
+    particle-float-4 3s ease-in-out infinite;
+
+}
+
+/* =========================================
+CORE ANIMATIONS
+========================================= */
+
+@keyframes x-loader-breathe {
+
+0%,
+100% {
+    transform: scale(1);
+}
+
+50% {
+    transform: scale(1.025);
+}
+
+}
+
+@keyframes aura-pulse {
+
+0%,
+100% {
+    transform: scale(0.85);
+    opacity: 0.45;
+}
+
+50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+}
+
+/* =========================================
+ORBIT ANIMATIONS
+========================================= */
+
+@keyframes orbit-spin-1 {
+
+from {
+    transform:
+        translate(-50%, -50%)
+        rotateX(62deg)
+        rotateZ(0deg);
+}
+
+to {
+    transform:
+        translate(-50%, -50%)
+        rotateX(62deg)
+        rotateZ(360deg);
+}
+
+}
+
+@keyframes orbit-spin-2 {
+
+from {
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg)
+        rotateY(25deg)
+        rotateZ(0deg);
+}
+
+to {
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg)
+        rotateY(25deg)
+        rotateZ(360deg);
+}
+
+}
+
+@keyframes orbit-spin-3 {
+
+from {
+    transform:
+        translate(-50%, -50%)
+        rotateX(70deg)
+        rotateY(-35deg)
+        rotateZ(0deg);
+}
+
+to {
+    transform:
+        translate(-50%, -50%)
+        rotateX(70deg)
+        rotateY(-35deg)
+        rotateZ(360deg);
+}
+
+}
+
+/* =========================================
+SCAN BEAM
+========================================= */
+
+@keyframes scan-beam {
+
+0% {
+    transform:
+        translateX(-50%)
+        rotate(0deg);
+    opacity: 0;
+}
+
+15% {
+    opacity: 1;
+}
+
+50% {
+    transform:
+        translateX(-50%)
+        rotate(180deg);
+    opacity: 0.8;
+}
+
+85% {
+    opacity: 1;
+}
+
+100% {
+    transform:
+        translateX(-50%)
+        rotate(360deg);
+    opacity: 0;
+}
+
+}
+
+/* =========================================
+X FLOAT
+========================================= */
+
+@keyframes x-symbol-float {
+
+0%,
+100% {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+50% {
+    transform:
+        translateY(-2px)
+        scale(1.015);
+}
+
+}
+
+/* =========================================
+SUBTLE CORE FLICKER
+========================================= */
+
+@keyframes x-core-flicker {
+
+0%,
+88%,
+100% {
+    opacity: 1;
+}
+
+89% {
+    opacity: 0.8;
+}
+
+90% {
+    opacity: 1;
+}
+
+94% {
+    opacity: 0.92;
+}
+
+95% {
+    opacity: 1;
+}
+
+}
+
+/* =========================================
+CONTROLLED GLITCH BURSTS
+========================================= */
+
+/*
+The glitch only happens for a tiny moment
+every few seconds.
+This keeps it futuristic without being annoying.
+*/
+
+@keyframes glitch-cyan-burst {
+
+0%,
+86%,
+100% {
+    opacity: 0;
+
+    transform:
+        translate(0)
+        skewX(0);
+}
+
+87% {
+    opacity: 0.8;
+
+    transform:
+        translate(-4px, 0)
+        skewX(-8deg);
+}
+
+88% {
+    opacity: 0.5;
+
+    transform:
+        translate(3px, 1px)
+        skewX(5deg);
+}
+
+89% {
+    opacity: 0;
+}
+
+}
+
+@keyframes glitch-pink-burst {
+
+0%,
+88%,
+100% {
+    opacity: 0;
+
+    transform:
+        translate(0)
+        skewX(0);
+}
+
+89% {
+    opacity: 0.7;
+
+    transform:
+        translate(4px, 0)
+        skewX(8deg);
+}
+
+90% {
+    opacity: 0.4;
+
+    transform:
+        translate(-3px, -1px)
+        skewX(-5deg);
+}
+
+91% {
+    opacity: 0;
+}
+
+}
+
+/* =========================================
+DIGITAL CUT GLITCHES
+========================================= */
+
+@keyframes digital-cut-1 {
+
+0%,
+87%,
+100% {
+    opacity: 0;
+    transform: translateX(0);
+}
+
+88% {
+    opacity: 0.9;
+    transform: translateX(-7px);
+}
+
+90% {
+    opacity: 0;
+    transform: translateX(5px);
+}
+
+}
+
+@keyframes digital-cut-2 {
+
+0%,
+89%,
+100% {
+    opacity: 0;
+    transform: translateX(0);
+}
+
+90% {
+    opacity: 0.8;
+    transform: translateX(6px);
+}
+
+92% {
+    opacity: 0;
+}
+
+}
+
+@keyframes digital-cut-3 {
+
+0%,
+91%,
+100% {
+    opacity: 0;
+    transform: translateX(0);
+}
+
+92% {
+    opacity: 0.8;
+    transform: translateX(-5px);
+}
+
+94% {
+    opacity: 0;
+}
+
+}
+
+/* =========================================
+PARTICLE MOTION
+========================================= */
+
+@keyframes particle-float-1 {
+
+0%,
+100% {
+    opacity: 0;
+    transform: translate(0, 8px);
+}
+
+45% {
+    opacity: 0.8;
+}
+
+70% {
+    opacity: 0;
+    transform: translate(-8px, -8px);
+}
+
+}
+
+@keyframes particle-float-2 {
+
+0%,
+100% {
+    opacity: 0;
+    transform: translate(0, 5px);
+}
+
+50% {
+    opacity: 0.7;
+    transform: translate(7px, -7px);
+}
+
+}
+
+@keyframes particle-float-3 {
+
+0%,
+100% {
+    opacity: 0;
+    transform: translate(0, 0);
+}
+
+50% {
+    opacity: 0.8;
+    transform: translate(-7px, -9px);
+}
+
+}
+
+@keyframes particle-float-4 {
+
+0%,
+100% {
+    opacity: 0;
+    transform: translate(0, 0);
+}
+
+50% {
+    opacity: 0.9;
+    transform: translate(7px, 7px);
+}
+
+}
+
+/* =========================================
+ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+.xera-loader,
+.x-loader-aura,
+.x-orbit,
+.x-scan-ring::after,
+.x-symbol,
+.x-main,
+.x-glitch,
+.x-cut,
+.x-particle {
+    animation: none !important;
+}
+
+.x-loader-aura {
+    opacity: 0.5;
+}
+
+}
 
 /* =========================================
    Ambient Background
