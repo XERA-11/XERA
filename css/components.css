@@ -594,20 +594,895 @@ opacity: 0.8;
 transform:
     translateX(-6px)
     scaleX(1);
+}
+
+   /* =========================================
+XERA — SIGNATURE LOADING X
+X-FORM / X-SHARD LOADING SYSTEM
+========================================= */
+
+.xera-loader {
+position: relative;
+
+width: 100px;
+height: 100px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin: 0 auto 1.5rem;
+
+isolation: isolate;
+
+contain: layout paint;
 
 }
 
-92% {
-opacity: 0.4;
+/* =========================================
+X SIGNATURE CORE
+========================================= */
+
+.x-signature {
+position: relative;
+
+width: 76px;
+height: 76px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-family: "Inter", sans-serif;
+
+font-size: 76px;
+font-weight: 700;
+
+line-height: 0.8;
+
+letter-spacing: -0.14em;
+
+transform: translateZ(0);
+
+/*
+The X slowly builds,
+becomes complete,
+glitches,
+then dissolves.
+*/
+
+animation:
+    xera-loading-cycle 4.8s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    infinite;
+
+}
+
+/* =========================================
+ALL X LAYERS
+========================================= */
+
+.x-layer {
+position: absolute;
+
+top: 50%;
+left: 50%;
+
+pointer-events: none;
+
+user-select: none;
 
 transform:
-    translateX(5px)
-    scaleX(0.7);
+    translate(-50%, -50%);
 
 }
 
-93% {
+/* =========================================
+MAIN X
+========================================= */
+
+.x-main {
+z-index: 5;
+
+color: #ffffff;
+
+text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(0, 240, 255, 0.45),
+    0 0 24px rgba(123, 63, 228, 0.35);
+
+/*
+Main X:
+invisible → builds → stays → dissolves
+*/
+
+animation:
+    xera-x-build 4.8s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    infinite;
+
+}
+
+/* =========================================
+CYAN DIGITAL BUILD LAYER
+========================================= */
+
+.x-cyan {
+z-index: 4;
+
+color: transparent;
+
+-webkit-text-stroke:
+    1px rgba(0, 240, 255, 0.9);
+
 opacity: 0;
+
+filter:
+    drop-shadow(
+        0 0 8px
+        rgba(0, 240, 255, 0.7)
+    );
+
+animation:
+    xera-cyan-build 4.8s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    infinite;
+
+}
+
+/* =========================================
+VIOLET DIGITAL BUILD LAYER
+========================================= */
+
+.x-violet {
+z-index: 3;
+
+color: transparent;
+
+-webkit-text-stroke:
+    1px rgba(123, 63, 228, 0.85);
+
+opacity: 0;
+
+filter:
+    drop-shadow(
+        0 0 10px
+        rgba(123, 63, 228, 0.6)
+    );
+
+animation:
+    xera-violet-build 4.8s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    infinite;
+
+}
+
+/* =========================================
+ELECTRIC PINK GLITCH LAYER
+========================================= */
+
+.x-pink {
+z-index: 2;
+
+color: transparent;
+
+-webkit-text-stroke:
+    1px rgba(255, 0, 85, 0.75);
+
+opacity: 0;
+
+filter:
+    drop-shadow(
+        0 0 8px
+        rgba(255, 0, 85, 0.5)
+    );
+
+animation:
+    xera-pink-build 4.8s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    infinite;
+
+}
+
+/* =========================================
+DIGITAL LOADING SLICES
+========================================= */
+
+.x-slice {
+position: absolute;
+
+z-index: 10;
+
+height: 2px;
+
+pointer-events: none;
+
+opacity: 0;
+
+background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 240, 255, 0.9),
+        #ffffff,
+        rgba(123, 63, 228, 0.9),
+        transparent
+    );
+
+box-shadow:
+    0 0 8px
+    rgba(0, 240, 255, 0.6);
+
+/*
+These slices appear
+while the X is forming.
+*/
+
+}
+
+/* Top Digital Slice */
+
+.x-slice-1 {
+width: 34px;
+
+top: 25px;
+left: 17px;
+
+animation:
+    xera-loading-slice-one 4.8s
+    infinite;
+
+}
+
+/* Middle Digital Slice */
+
+.x-slice-2 {
+width: 48px;
+
+top: 36px;
+left: 10px;
+
+animation:
+    xera-loading-slice-two 4.8s
+    infinite;
+
+}
+
+/* Bottom Digital Slice */
+
+.x-slice-3 {
+width: 28px;
+
+bottom: 24px;
+right: 17px;
+
+animation:
+    xera-loading-slice-three 4.8s
+    infinite;
+
+}
+
+/* =========================================
+MAIN LOADING CYCLE
+========================================= */
+
+@keyframes xera-loading-cycle {
+
+/*
+0–15%
+X is not formed yet.
+*/
+
+0% {
+    transform:
+        scale(0.72)
+        translateY(3px);
+}
+
+
+/*
+X begins forming.
+*/
+
+15% {
+    transform:
+        scale(0.88)
+        translateY(1px);
+}
+
+
+/*
+X becomes complete.
+*/
+
+32% {
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+
+/*
+Calm completed state.
+*/
+
+62% {
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+
+/*
+Tiny glitch moment.
+*/
+
+65% {
+    transform:
+        translateX(-2px)
+        scale(1.01)
+        skewX(-3deg);
+}
+
+
+67% {
+    transform:
+        translateX(2px)
+        scale(0.99)
+        skewX(2deg);
+}
+
+
+/*
+X begins dissolving.
+*/
+
+78% {
+    transform:
+        scale(0.92)
+        translateY(-1px);
+}
+
+
+/*
+Almost gone.
+*/
+
+90% {
+    transform:
+        scale(0.76)
+        translateY(2px);
+}
+
+
+/*
+Reset.
+*/
+
+100% {
+    transform:
+        scale(0.72)
+        translateY(3px);
+}
+
+}
+
+/* =========================================
+MAIN X — BUILD / HOLD / DISSOLVE
+========================================= */
+
+@keyframes xera-x-build {
+
+/*
+Empty
+*/
+
+0% {
+    opacity: 0;
+
+    filter:
+        blur(5px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.72);
+}
+
+
+/*
+Digital materialization
+*/
+
+12% {
+    opacity: 0.15;
+
+    filter:
+        blur(3px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.82);
+}
+
+
+25% {
+    opacity: 0.65;
+
+    filter:
+        blur(1px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.96);
+}
+
+
+/*
+Fully loaded X
+*/
+
+34%,
+62% {
+    opacity: 1;
+
+    filter:
+        blur(0);
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/*
+Small glitch flicker
+*/
+
+65% {
+    opacity: 0.85;
+
+    filter:
+        blur(0.5px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.01);
+}
+
+
+67% {
+    opacity: 1;
+
+    filter:
+        blur(0);
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.99);
+}
+
+
+/*
+Dissolve begins
+*/
+
+76% {
+    opacity: 0.72;
+
+    filter:
+        blur(1px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.9);
+}
+
+
+88% {
+    opacity: 0.25;
+
+    filter:
+        blur(3px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.78);
+}
+
+
+/*
+Completely gone
+*/
+
+100% {
+    opacity: 0;
+
+    filter:
+        blur(5px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.72);
+}
+
+}
+
+/* =========================================
+CYAN — X FORMATION
+========================================= */
+
+@keyframes xera-cyan-build {
+
+0% {
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(-14px)
+        skewX(-10deg)
+        scaleX(0.75);
+}
+
+
+12% {
+    opacity: 0.7;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(-7px)
+        skewX(-6deg)
+        scaleX(0.9);
+}
+
+
+25% {
+    opacity: 0.35;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(-3px)
+        skewX(-2deg)
+        scaleX(0.98);
+}
+
+
+34%,
+62% {
+    opacity: 0;
+}
+
+
+/*
+Short glitch burst
+*/
+
+65% {
+    opacity: 0.8;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(-5px)
+        skewX(-7deg);
+}
+
+
+67% {
+    opacity: 0.25;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(3px)
+        skewX(3deg);
+}
+
+
+70% {
+    opacity: 0;
+}
+
+
+100% {
+    opacity: 0;
+}
+
+}
+
+/* =========================================
+VIOLET — X FORMATION
+========================================= */
+
+@keyframes xera-violet-build {
+
+0% {
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(12px)
+        skewX(8deg)
+        scaleX(0.75);
+}
+
+
+14% {
+    opacity: 0.5;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(6px)
+        skewX(5deg)
+        scaleX(0.9);
+}
+
+
+28% {
+    opacity: 0.25;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(2px)
+        skewX(2deg)
+        scaleX(0.98);
+}
+
+
+34%,
+62% {
+    opacity: 0;
+}
+
+
+/*
+Glitch flash
+*/
+
+66% {
+    opacity: 0.65;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(5px)
+        skewX(6deg);
+}
+
+
+68% {
+    opacity: 0.2;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(-3px)
+        skewX(-3deg);
+}
+
+
+70%,
+100% {
+    opacity: 0;
+}
+
+}
+
+/* =========================================
+PINK — MICRO GLITCH
+========================================= */
+
+@keyframes xera-pink-build {
+
+0%,
+58% {
+    opacity: 0;
+}
+
+
+/*
+Very short RGB glitch
+*/
+
+64% {
+    opacity: 0.5;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(6px)
+        skewX(-8deg);
+}
+
+
+66% {
+    opacity: 0.75;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(-5px)
+        skewX(5deg);
+}
+
+
+68% {
+    opacity: 0;
+}
+
+
+100% {
+    opacity: 0;
+}
+
+}
+
+/* =========================================
+LOADING SLICE 1
+========================================= */
+
+@keyframes xera-loading-slice-one {
+
+0%,
+5% {
+    opacity: 0;
+
+    transform:
+        translateX(-15px)
+        scaleX(0.2);
+}
+
+
+15% {
+    opacity: 0.8;
+
+    transform:
+        translateX(-5px)
+        scaleX(0.7);
+}
+
+
+25% {
+    opacity: 0;
+
+    transform:
+        translateX(4px)
+        scaleX(1);
+}
+
+
+60% {
+    opacity: 0;
+}
+
+
+/*
+Glitch flash
+*/
+
+65% {
+    opacity: 0.8;
+
+    transform:
+        translateX(-7px)
+        scaleX(1);
+}
+
+
+68% {
+    opacity: 0;
+}
+
+
+100% {
+    opacity: 0;
+}
+
+}
+
+/* =========================================
+LOADING SLICE 2
+========================================= */
+
+@keyframes xera-loading-slice-two {
+
+0%,
+8% {
+    opacity: 0;
+
+    transform:
+        translateX(14px)
+        scaleX(0.2);
+}
+
+
+18% {
+    opacity: 0.9;
+
+    transform:
+        translateX(5px)
+        scaleX(0.8);
+}
+
+
+30% {
+    opacity: 0;
+
+    transform:
+        translateX(-4px)
+        scaleX(1);
+}
+
+
+60% {
+    opacity: 0;
+}
+
+
+66% {
+    opacity: 0.9;
+
+    transform:
+        translateX(6px)
+        scaleX(1);
+}
+
+
+69% {
+    opacity: 0;
+}
+
+
+100% {
+    opacity: 0;
+}
+
+}
+
+/* =========================================
+LOADING SLICE 3
+========================================= */
+
+@keyframes xera-loading-slice-three {
+
+0%,
+12% {
+    opacity: 0;
+
+    transform:
+        translateX(-12px)
+        scaleX(0.2);
+}
+
+
+22% {
+    opacity: 0.7;
+
+    transform:
+        translateX(-3px)
+        scaleX(0.8);
+}
+
+
+34% {
+    opacity: 0;
+}
+
+
+60% {
+    opacity: 0;
+}
+
+
+67% {
+    opacity: 0.7;
+
+    transform:
+        translateX(-5px)
+        scaleX(0.9);
+}
+
+
+70% {
+    opacity: 0;
+}
+
+
+100% {
+    opacity: 0;
 }
 
 }
@@ -624,10 +1499,270 @@ REDUCED MOTION
 .x-violet,
 .x-pink,
 .x-slice {
-animation: none !important;
+    animation: none !important;
+}
+
+.x-main {
+    opacity: 1;
+    filter: none;
+    transform:
+        translate(-50%, -50%)
+        scale(1);
 }
 
 }
+
+/* =========================================
+Ambient Background
+========================================= */
+
+.ambient-canvas {
+position: fixed;
+
+inset: 0;
+
+pointer-events: none;
+
+z-index: 0;
+
+overflow: hidden;
+
+}
+
+.aurora-glow {
+position: absolute;
+
+top: -20%;
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 80vw;
+height: 60vh;
+
+background:
+radial-gradient(
+ellipse at center,
+rgba(123, 63, 228, 0.12) 0%,
+rgba(0, 240, 255, 0.03) 50%,
+transparent 70%
+);
+
+filter: blur(80px);
+
+}
+
+.pulse-grid {
+position: absolute;
+
+inset: 0;
+
+background-image:
+linear-gradient(
+var(--color-border-subtle) 1px,
+transparent 1px
+),
+linear-gradient(
+90deg,
+var(--color-border-subtle) 1px,
+transparent 1px
+);
+
+background-size: 40px 40px;
+
+mask-image:
+radial-gradient(
+circle at center,
+black 0%,
+transparent 80%
+);
+
+-webkit-mask-image:
+radial-gradient(
+circle at center,
+black 0%,
+transparent 80%
+);
+
+opacity: 0.15;
+
+}
+
+/* =========================================
+Header Navigation
+========================================= */
+
+.header-nav {
+display: flex;
+
+justify-content: space-between;
+align-items: center;
+
+padding: 1.5rem 2rem;
+
+width: 100%;
+
+}
+
+.nav-brand-text {
+font-weight: var(--font-weight-bold);
+
+letter-spacing: 0.05em;
+
+color: var(--color-text-primary);
+
+}
+
+.nav-links {
+display: flex;
+
+gap: 1.5rem;
+
+}
+
+.nav-link {
+font-size: var(--font-size-small);
+
+color: var(--color-text-secondary);
+
+transition:
+color var(--transition-fast);
+
+}
+
+.nav-link:hover {
+color: var(--color-secondary-cyan);
+}
+
+/* =========================================
+Authentication Card
+========================================= */
+
+.auth-card {
+background: var(--color-bg-surface-1);
+
+border:
+1px solid var(--color-border-subtle);
+
+border-radius: var(--radius-md);
+
+padding: 2.5rem;
+
+max-width: 400px;
+width: 90%;
+
+text-align: center;
+
+}
+
+.auth-title {
+font-size: var(--font-size-heading);
+
+color: var(--color-text-primary);
+
+margin-bottom: 0.5rem;
+
+}
+
+.auth-desc {
+margin-bottom: 2rem;
+}
+
+/* =========================================
+Platform Application Layout
+========================================= */
+
+.app-layout {
+display: flex;
+
+min-height: 100vh;
+
+}
+
+.app-sidebar {
+width: 240px;
+
+background: var(--color-bg-surface-1);
+
+border-right:
+1px solid var(--color-border-subtle);
+
+padding: 2rem 1.5rem;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 2rem;
+
+}
+
+.brand-title-sm {
+font-size: var(--font-size-subheading);
+
+font-weight: var(--font-weight-bold);
+
+letter-spacing: 0.08em;
+
+color: var(--color-text-primary);
+
+}
+
+.app-nav {
+display: flex;
+
+flex-direction: column;
+
+gap: 0.5rem;
+
+}
+
+.nav-item {
+padding: 0.75rem 1rem;
+
+border-radius: var(--radius-sm);
+
+color: var(--color-text-secondary);
+
+font-weight: var(--font-weight-medium);
+
+transition:
+all var(--transition-fast);
+
+}
+
+.nav-item:hover,
+.nav-item.active {
+background: var(--color-bg-surface-2);
+
+color: var(--color-secondary-cyan);
+
+}
+
+.app-main-viewport {
+flex: 1;
+
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+padding: 2rem;
+
+}
+
+.placeholder-container {
+padding: 3rem;
+
+border:
+1px dashed var(--color-border-subtle);
+
+border-radius: var(--radius-md);
+
+text-align: center;
+
+    } 
+
 
 /* =========================================
 Ambient Background
