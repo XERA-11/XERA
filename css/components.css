@@ -1,184 +1,69 @@
 /* XERA — Reusable UI Components */
 
-
 /* =========================================
-   Hero Actions / Buttons
-   ========================================= */
+Hero Actions / Buttons
+========================================= */
 
 .hero-actions {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-    max-width: 380px;
+display: flex;
+gap: 1rem;
+width: 100%;
+max-width: 380px;
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+display: inline-flex;
+align-items: center;
+justify-content: center;
 
-    padding: 0.875rem 1.75rem;
+padding: 0.875rem 1.75rem;
 
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-medium);
+font-size: var(--font-size-body);
+font-weight: var(--font-weight-medium);
 
-    border-radius: var(--radius-full);
+border-radius: var(--radius-full);
 
-    transition: all var(--transition-normal);
+transition: all var(--transition-normal);
 
-    width: 100%;
-    cursor: pointer;
+width: 100%;
+cursor: pointer;
+
 }
 
 .btn-primary {
-    background: var(--color-primary-violet);
-    color: var(--color-text-primary);
+background: var(--color-primary-violet);
+color: var(--color-text-primary);
 
-    box-shadow:
-        0 4px 20px rgba(123, 63, 228, 0.3);
+box-shadow:
+    0 4px 20px rgba(123, 63, 228, 0.3);
+
 }
 
 .btn-primary:hover {
-    background: var(--color-primary-violet-hover);
+background: var(--color-primary-violet-hover);
 
-    box-shadow:
-        0 6px 24px rgba(123, 63, 228, 0.5);
+box-shadow:
+    0 6px 24px rgba(123, 63, 228, 0.5);
 
-    transform: translateY(-1px);
+transform: translateY(-1px);
+
 }
 
 .btn-secondary {
-    background: var(--color-bg-surface-2);
-    color: var(--color-text-primary);
+background: var(--color-bg-surface-2);
+color: var(--color-text-primary);
 
-    border: 1px solid var(--color-border-subtle);
+border: 1px solid var(--color-border-subtle);
+
 }
 
 .btn-secondary:hover {
-    background: var(--color-bg-surface-3);
-    border-color: var(--color-border-accent);
-}
-
-
-/* =========================================
-   XERA Futuristic Minimal Glitch X Loader
-   ========================================= */
-
-.xera-loader {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 1.5rem;
-    isolation: isolate;
-}
-
-/* Outer Precision Tech Frame */
-.x-tech-frame {
-    position: absolute;
-    inset: 12px;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 240, 255, 0.25);
-    border-top-color: #00F0FF;
-    border-bottom-color: var(--color-primary-violet, #7B3FE4);
-    animation: tech-frame-spin 4s linear infinite;
-}
-
-/* X Container */
-.x-loader {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    filter: drop-shadow(0 0 10px rgba(123, 63, 228, 0.6));
-    animation: x-glitch-jitter 3.5s infinite ease-in-out;
-}
-
-/* Cybernetic X Line Blades */
-.x-line {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 44px;
-    border-radius: 2px;
-    background: linear-gradient(180deg, #FFFFFF 0%, #00F0FF 40%, #7B3FE4 100%);
-}
-
-.x-line-1 {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.x-line-2 {
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-/* Controlled Futuristic Glitch Shadows */
-.x-line-1::before,
-.x-line-2::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: #00F0FF;
-    opacity: 0.8;
-    border-radius: inherit;
-    animation: glitch-slice-cyan 2.8s infinite;
-}
-
-.x-line-1::after,
-.x-line-2::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: #FF0055;
-    opacity: 0.8;
-    border-radius: inherit;
-    animation: glitch-slice-pink 2.8s infinite;
-}
-
-/* Subtle Core Aura */
-.x-core-aura {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    background: radial-gradient(circle, rgba(0, 240, 255, 0.4) 0%, rgba(123, 63, 228, 0) 70%);
-    border-radius: 50%;
-    animation: aura-breathe 2.5s ease-in-out infinite alternate;
+background: var(--color-bg-surface-3);
+border-color: var(--color-border-accent);
 }
 
 /* =========================================
-   Animations
-   ========================================= */
-
-@keyframes tech-frame-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes aura-breathe {
-    0% { transform: scale(0.8); opacity: 0.3; }
-    100% { transform: scale(1.6); opacity: 0.7; }
-}
-
-/* Sharp, precise digital twitch */
-@keyframes x-glitch-jitter {
-    0%, 88%, 100% { transform: scale(1) translate(0, 0); }
-    89% { transform: scale(1.02) translate(-2px, 1px); }
-    91% { transform: scale(0.98) translate(2px, -1px); }
-    92% { transform: scale(1) translate(0, 0); }
-    95% { transform: scale(1.04) translate(-1px, -1px); }
-    96% { transform: scale(1) translate(0, 0); }
-}
-
-/* Offset digital distortion shadows */
-@keyframes glitch-slice-cyan {
-    0%, 86%, 100% { transform: translate(0, 0); opacity: 0; }
-    87% { transform: translate(-3px, 1px); opacity: 0.75; }
-    90% { transform: translate(2px, -2px); opacity: 0.6; }
-
-/* =========================================
-XERA — SIGNATURE FUTURISTIC X LOADER
+XERA — Signature Futuristic X Loader
 ========================================= */
 
 .xera-loader {
@@ -195,16 +80,12 @@ margin: 0 auto 1.5rem;
 
 isolation: isolate;
 
-/* Prevents animation from affecting layout */
 contain: layout paint;
-
-/* Soft breathing presence */
-animation: x-loader-breathe 4s ease-in-out infinite;
 
 }
 
 /* =========================================
-ATMOSPHERIC AURA
+Atmospheric Aura
 ========================================= */
 
 .x-loader-aura {
@@ -233,7 +114,7 @@ animation:
 }
 
 /* =========================================
-ORBITAL RINGS
+Orbital Rings
 ========================================= */
 
 .x-orbit {
@@ -252,7 +133,8 @@ pointer-events: none;
 
 }
 
-/* Cyan orbit */
+/* Cyan Orbit */
+
 .x-orbit-1 {
 width: 82px;
 height: 82px;
@@ -270,7 +152,8 @@ animation:
 
 }
 
-/* Violet orbit */
+/* Violet Orbit */
+
 .x-orbit-2 {
 width: 96px;
 height: 96px;
@@ -288,7 +171,8 @@ animation:
 
 }
 
-/* Ultra subtle outer orbit */
+/* Ultra Subtle Outer Orbit */
+
 .x-orbit-3 {
 width: 108px;
 height: 108px;
@@ -307,7 +191,7 @@ animation:
 }
 
 /* =========================================
-SCANNING RING
+Scanning Ring
 ========================================= */
 
 .x-scan-ring {
@@ -328,7 +212,8 @@ overflow: hidden;
 
 }
 
-/* Moving scanner beam */
+/* Moving Scanner Beam */
+
 .x-scan-ring::after {
 content: "";
 
@@ -360,7 +245,7 @@ animation:
 }
 
 /* =========================================
-MAIN X SYMBOL
+Main X Symbol
 ========================================= */
 
 .x-symbol {
@@ -390,7 +275,7 @@ animation:
 }
 
 /* =========================================
-CLEAN MAIN X
+Clean Main X
 ========================================= */
 
 .x-main {
@@ -411,7 +296,7 @@ animation:
 }
 
 /* =========================================
-GLITCH COLOR LAYERS
+Glitch Color Layers
 ========================================= */
 
 .x-glitch {
@@ -429,7 +314,8 @@ mix-blend-mode: screen;
 
 }
 
-/* Cyan digital ghost */
+/* Cyan Digital Ghost */
+
 .x-glitch-cyan {
 -webkit-text-stroke:
 1px rgba(0, 240, 255, 0.9);
@@ -442,7 +328,8 @@ animation:
 
 }
 
-/* Pink digital ghost */
+/* Pink Digital Ghost */
+
 .x-glitch-pink {
 -webkit-text-stroke:
 1px rgba(255, 0, 85, 0.8);
@@ -456,7 +343,7 @@ animation:
 }
 
 /* =========================================
-DIGITAL GLITCH CUTS
+Digital Glitch Cuts
 ========================================= */
 
 .x-cut {
@@ -508,7 +395,7 @@ animation:
 }
 
 /* =========================================
-FLOATING DIGITAL PARTICLES
+Floating Digital Particles
 ========================================= */
 
 .x-particle {
@@ -528,7 +415,8 @@ opacity: 0;
 
 }
 
-/* Particle positions */
+/* Particle 1 */
+
 .x-particle-1 {
 top: 18px;
 left: 20px;
@@ -537,6 +425,8 @@ animation:
     particle-float-1 3.5s ease-in-out infinite;
 
 }
+
+/* Particle 2 */
 
 .x-particle-2 {
 top: 30px;
@@ -549,6 +439,8 @@ animation:
 
 }
 
+/* Particle 3 */
+
 .x-particle-3 {
 bottom: 18px;
 left: 18px;
@@ -557,6 +449,8 @@ animation:
     particle-float-3 4.5s ease-in-out infinite;
 
 }
+
+/* Particle 4 */
 
 .x-particle-4 {
 bottom: 25px;
@@ -570,21 +464,8 @@ animation:
 }
 
 /* =========================================
-CORE ANIMATIONS
+Loader Animations
 ========================================= */
-
-@keyframes x-loader-breathe {
-
-0%,
-100% {
-    transform: scale(1);
-}
-
-50% {
-    transform: scale(1.025);
-}
-
-}
 
 @keyframes aura-pulse {
 
@@ -602,7 +483,7 @@ CORE ANIMATIONS
 }
 
 /* =========================================
-ORBIT ANIMATIONS
+Orbit Animations
 ========================================= */
 
 @keyframes orbit-spin-1 {
@@ -664,7 +545,7 @@ to {
 }
 
 /* =========================================
-SCAN BEAM
+Scan Beam
 ========================================= */
 
 @keyframes scan-beam {
@@ -673,6 +554,7 @@ SCAN BEAM
     transform:
         translateX(-50%)
         rotate(0deg);
+
     opacity: 0;
 }
 
@@ -684,6 +566,7 @@ SCAN BEAM
     transform:
         translateX(-50%)
         rotate(180deg);
+
     opacity: 0.8;
 }
 
@@ -695,13 +578,14 @@ SCAN BEAM
     transform:
         translateX(-50%)
         rotate(360deg);
+
     opacity: 0;
 }
 
 }
 
 /* =========================================
-X FLOAT
+X Floating Motion
 ========================================= */
 
 @keyframes x-symbol-float {
@@ -722,7 +606,7 @@ X FLOAT
 }
 
 /* =========================================
-SUBTLE CORE FLICKER
+Subtle Core Flicker
 ========================================= */
 
 @keyframes x-core-flicker {
@@ -752,14 +636,8 @@ SUBTLE CORE FLICKER
 }
 
 /* =========================================
-CONTROLLED GLITCH BURSTS
+Controlled Glitch Bursts
 ========================================= */
-
-/*
-The glitch only happens for a tiny moment
-every few seconds.
-This keeps it futuristic without being annoying.
-*/
 
 @keyframes glitch-cyan-burst {
 
@@ -830,7 +708,7 @@ This keeps it futuristic without being annoying.
 }
 
 /* =========================================
-DIGITAL CUT GLITCHES
+Digital Cut Glitches
 ========================================= */
 
 @keyframes digital-cut-1 {
@@ -895,7 +773,7 @@ DIGITAL CUT GLITCHES
 }
 
 /* =========================================
-PARTICLE MOTION
+Particle Motion
 ========================================= */
 
 @keyframes particle-float-1 {
@@ -963,7 +841,7 @@ PARTICLE MOTION
 }
 
 /* =========================================
-ACCESSIBILITY
+Accessibility
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -987,238 +865,252 @@ ACCESSIBILITY
 }
 
 /* =========================================
-   Ambient Background
-   ========================================= */
+Ambient Background
+========================================= */
 
 .ambient-canvas {
-    position: fixed;
+position: fixed;
 
-    inset: 0;
+inset: 0;
 
-    pointer-events: none;
+pointer-events: none;
 
-    z-index: 0;
+z-index: 0;
 
-    overflow: hidden;
+overflow: hidden;
+
 }
 
 .aurora-glow {
-    position: absolute;
+position: absolute;
 
-    top: -20%;
-    left: 50%;
+top: -20%;
+left: 50%;
 
-    transform: translateX(-50%);
+transform: translateX(-50%);
 
-    width: 80vw;
-    height: 60vh;
+width: 80vw;
+height: 60vh;
 
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(123, 63, 228, 0.12) 0%,
-            rgba(0, 240, 255, 0.03) 50%,
-            transparent 70%
-        );
+background:
+    radial-gradient(
+        ellipse at center,
+        rgba(123, 63, 228, 0.12) 0%,
+        rgba(0, 240, 255, 0.03) 50%,
+        transparent 70%
+    );
 
-    filter: blur(80px);
+filter: blur(80px);
+
 }
 
 .pulse-grid {
-    position: absolute;
+position: absolute;
 
-    inset: 0;
+inset: 0;
 
-    background-image:
-        linear-gradient(
-            var(--color-border-subtle) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            var(--color-border-subtle) 1px,
-            transparent 1px
-        );
+background-image:
+    linear-gradient(
+        var(--color-border-subtle) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        var(--color-border-subtle) 1px,
+        transparent 1px
+    );
 
-    background-size: 40px 40px;
+background-size: 40px 40px;
 
-    mask-image:
-        radial-gradient(
-            circle at center,
-            black 0%,
-            transparent 80%
-        );
+mask-image:
+    radial-gradient(
+        circle at center,
+        black 0%,
+        transparent 80%
+    );
 
-    -webkit-mask-image:
-        radial-gradient(
-            circle at center,
-            black 0%,
-            transparent 80%
-        );
+-webkit-mask-image:
+    radial-gradient(
+        circle at center,
+        black 0%,
+        transparent 80%
+    );
 
-    opacity: 0.15;
+opacity: 0.15;
+
 }
 
-
 /* =========================================
-   Header Navigation
-   ========================================= */
+Header Navigation
+========================================= */
 
 .header-nav {
-    display: flex;
+display: flex;
 
-    justify-content: space-between;
-    align-items: center;
+justify-content: space-between;
+align-items: center;
 
-    padding: 1.5rem 2rem;
+padding: 1.5rem 2rem;
 
-    width: 100%;
+width: 100%;
+
 }
 
 .nav-brand-text {
-    font-weight: var(--font-weight-bold);
+font-weight: var(--font-weight-bold);
 
-    letter-spacing: 0.05em;
+letter-spacing: 0.05em;
 
-    color: var(--color-text-primary);
+color: var(--color-text-primary);
+
 }
 
 .nav-links {
-    display: flex;
+display: flex;
 
-    gap: 1.5rem;
+gap: 1.5rem;
+
 }
 
 .nav-link {
-    font-size: var(--font-size-small);
+font-size: var(--font-size-small);
 
-    color: var(--color-text-secondary);
+color: var(--color-text-secondary);
 
-    transition:
-        color var(--transition-fast);
+transition:
+    color var(--transition-fast);
+
 }
 
 .nav-link:hover {
-    color: var(--color-secondary-cyan);
+color: var(--color-secondary-cyan);
 }
 
-
 /* =========================================
-   Authentication Card
-   ========================================= */
+Authentication Card
+========================================= */
 
 .auth-card {
-    background: var(--color-bg-surface-1);
+background: var(--color-bg-surface-1);
 
-    border:
-        1px solid var(--color-border-subtle);
+border:
+    1px solid var(--color-border-subtle);
 
-    border-radius: var(--radius-md);
+border-radius: var(--radius-md);
 
-    padding: 2.5rem;
+padding: 2.5rem;
 
-    max-width: 400px;
-    width: 90%;
+max-width: 400px;
+width: 90%;
 
-    text-align: center;
+text-align: center;
+
 }
 
 .auth-title {
-    font-size: var(--font-size-heading);
+font-size: var(--font-size-heading);
 
-    color: var(--color-text-primary);
+color: var(--color-text-primary);
 
-    margin-bottom: 0.5rem;
+margin-bottom: 0.5rem;
+
 }
 
 .auth-desc {
-    margin-bottom: 2rem;
+margin-bottom: 2rem;
 }
 
-
 /* =========================================
-   Platform Application Layout
-   ========================================= */
+Platform Application Layout
+========================================= */
 
 .app-layout {
-    display: flex;
+display: flex;
 
-    min-height: 100vh;
+min-height: 100vh;
+
 }
 
 .app-sidebar {
-    width: 240px;
+width: 240px;
 
-    background: var(--color-bg-surface-1);
+background: var(--color-bg-surface-1);
 
-    border-right:
-        1px solid var(--color-border-subtle);
+border-right:
+    1px solid var(--color-border-subtle);
 
-    padding: 2rem 1.5rem;
+padding: 2rem 1.5rem;
 
-    display: flex;
+display: flex;
 
-    flex-direction: column;
+flex-direction: column;
 
-    gap: 2rem;
+gap: 2rem;
+
 }
 
 .brand-title-sm {
-    font-size: var(--font-size-subheading);
+font-size: var(--font-size-subheading);
 
-    font-weight: var(--font-weight-bold);
+font-weight: var(--font-weight-bold);
 
-    letter-spacing: 0.08em;
+letter-spacing: 0.08em;
 
-    color: var(--color-text-primary);
+color: var(--color-text-primary);
+
 }
 
 .app-nav {
-    display: flex;
+display: flex;
 
-    flex-direction: column;
+flex-direction: column;
 
-    gap: 0.5rem;
+gap: 0.5rem;
+
 }
 
 .nav-item {
-    padding: 0.75rem 1rem;
+padding: 0.75rem 1rem;
 
-    border-radius: var(--radius-sm);
+border-radius: var(--radius-sm);
 
-    color: var(--color-text-secondary);
+color: var(--color-text-secondary);
 
-    font-weight: var(--font-weight-medium);
+font-weight: var(--font-weight-medium);
 
-    transition:
-        all var(--transition-fast);
+transition:
+    all var(--transition-fast);
+
 }
 
 .nav-item:hover,
 .nav-item.active {
-    background: var(--color-bg-surface-2);
+background: var(--color-bg-surface-2);
 
-    color: var(--color-secondary-cyan);
+color: var(--color-secondary-cyan);
+
 }
 
 .app-main-viewport {
-    flex: 1;
+flex: 1;
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
-    align-items: center;
+justify-content: center;
+align-items: center;
 
-    padding: 2rem;
+padding: 2rem;
+
 }
 
 .placeholder-container {
-    padding: 3rem;
+padding: 3rem;
 
-    border:
-        1px dashed var(--color-border-subtle);
+border:
+    1px dashed var(--color-border-subtle);
 
-    border-radius: var(--radius-md);
+border-radius: var(--radius-md);
 
-    text-align: center;
-  }
+text-align: center;
+
+   }
